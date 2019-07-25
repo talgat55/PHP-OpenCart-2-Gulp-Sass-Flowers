@@ -9,7 +9,7 @@ gulp.task('sass', function () {
   return gulp.src('./catalog/view/theme/theme/static/sass/style.sass')
     .pipe(sass().on('error', sass.logError))
       .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
-    .pipe(gulp.dest('./catalog/view/theme/theme/stylesheet/'))
+    .pipe(gulp.dest('./catalog/view/theme/theme/css/'))
 	.pipe(browserSync.reload({stream: true}));
 });
 

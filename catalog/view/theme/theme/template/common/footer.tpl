@@ -41,13 +41,12 @@
     <hr>
     <p><?php echo $powered; ?></p>
   </div>
+
 </footer>
+<!--   styles -->
+<link href="catalog/view/theme/theme/css/fontawesome-all.min.css" rel="stylesheet">
 
-<!--
-OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
-Please donate via PayPal to donate@opencart.com
-//-->
 
-<!-- Theme created by Welford Media for OpenCart 2.0 www.welfordmedia.co.uk -->
+<!--   scripts  -->
 
 </body></html>
