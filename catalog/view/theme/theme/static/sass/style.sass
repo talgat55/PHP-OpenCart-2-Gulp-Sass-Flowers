@@ -1,9 +1,177 @@
 @import "_variables.sass"
 
 body
-  font-family: $font_light
+  font-family: $font_basic
   font-size: 16px
   line-height: 1.5
 
+a
+  font-family: $font_basic
 
 // @media  (max-width: 600px)
+
+
+//
+// Header
+//
+header
+  #top
+    background-color: #f3f3f3
+    .list-links
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+        a
+          text-decoration: none
+          font-size: 1.125rem
+          color: #000
+          font-weight: 100
+          transition: all .3s
+          padding: 7px 18px
+          position: relative
+          display: block
+          &:after
+            content: ""
+            display: block
+            position: absolute
+            top: 50%
+            right: 0
+            transform: translateY(-50%)
+            width: 2px
+            background-color: #b2b2b2
+            height: 16px
+          &:hover
+            color: $main_color
+            text-decoration: none
+      li:last-child
+        a:after
+          display: none
+
+    #create-order-link
+      position: relative
+      a
+        text-decoration: none
+        display: block
+        background-color: $alt_color
+        color: #fff
+        font-weight: 300
+        padding: 13px 18px
+        position: absolute
+        top: 0
+        right: 0
+        transition: all .3s
+        &:hover:before
+          border-right: 10px solid $main_color
+        &:hover
+          text-decoration: none
+          background-color: $main_color
+        &:before
+          content: ""
+          display: block
+          width: 0
+          height: 0
+          border-top: 0 solid transparent
+          border-bottom: 10px solid transparent
+          border-right: 10px solid #066e7d
+          position: absolute
+          left: -10px
+          bottom: 0
+          transition: all .3s
+
+  .center-header
+    padding: 20px 0
+    .phone-block
+      a
+        text-decoration: none
+        display: block
+        font-weight: 400
+        font-size: 20px
+        color: #000
+        &:hover
+          text-decoration: none
+          p
+            color: $main_color
+        img
+          max-width: 100%
+        p
+          margin-bottom: 0
+          padding-left: 15px
+          transition: all .3s
+
+    .delivery-block
+      p
+        margin-bottom: 0
+        padding-left: 10px
+        font-weight: 300
+        color: #ff7759
+
+    .search-block-walp
+      border: 2px solid #919191
+      border-radius: 28px
+      padding: 0 11px
+      input
+        border: none
+        min-width: 220px
+        &:active,
+        &:focus
+          outline: none
+          box-shadow: none
+      i
+        color: #919191
+        font-size: 17px
+        transition: all .3s
+        &:hover
+          color: $main_color
+
+
+    #cart
+      position: relative
+      .dropdown-toggle::after
+        display: none
+      button
+        padding: 0
+        margin-bottom: 10px
+      h3
+        font-weight: 100
+        margin: 0
+        font-size: 1rem
+      span.price
+        font-weight: 300
+        font-size: 1rem
+      .second
+        padding-left: 35px
+
+      #cart-total
+        font-size: .75rem
+        color: #fff
+        background-color: #0498ae
+        padding: 1px 6px
+        position: absolute
+        top: 1px
+        right: -20px
+        border-radius: 50%
+
+
+    #favorite
+      a
+        text-decoration: none
+        display: block
+        color: red
+        font-weight: 300
+      i
+        color: red
+        font-size: 22px
+      p
+        margin-bottom: 0
+        text-decoration: underline
+        padding-left: 5px
+      .count
+        color: #000
+        padding-left: 5px
+
+
+
+
+
+

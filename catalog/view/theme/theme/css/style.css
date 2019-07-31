@@ -1,34 +1,162 @@
-@font-face {
-  font-family: 'Gotham Pro Medium';
-  src: local("Gotham Pro Medium"), local("GothamPro-Medium"), url("../fonts/GothamPro-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro-Medium.woff") format("woff"), url("../fonts/GothamPro-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Gotham Pro';
-  src: local("Gotham Pro"), local("GothamPro"), url("../fonts/GothamPro.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro.woff") format("woff"), url("../fonts/GothamPro.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Gotham Pro Light';
-  src: local("Gotham Pro Light"), local("GothamPro-Light"), url("../fonts/GothamPro-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro-Light.woff") format("woff"), url("../fonts/GothamPro-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Gotham Pro Bold';
-  src: local("Gotham Pro Bold"), local("GothamPro-Bold"), url("../fonts/GothamPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro-Bold.woff") format("woff"), url("../fonts/GothamPro-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Gotham Pro Black';
-  src: local("Gotham Pro Black"), local("GothamPro-Black"), url("../fonts/GothamPro-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro-Black.woff") format("woff"), url("../fonts/GothamPro-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal; }
-
 body {
-  font-family: "Gotham Pro Light";
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.5; }
+
+a {
+  font-family: "Roboto", sans-serif; }
+
+header #top {
+  background-color: #f3f3f3; }
+  header #top .list-links {
+    margin: 0;
+    padding: 0; }
+    header #top .list-links li {
+      list-style: none; }
+      header #top .list-links li a {
+        text-decoration: none;
+        font-size: 1.125rem;
+        color: #000;
+        font-weight: 100;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+        padding: 7px 18px;
+        position: relative;
+        display: block; }
+        header #top .list-links li a:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+                  transform: translateY(-50%);
+          width: 2px;
+          background-color: #b2b2b2;
+          height: 16px; }
+        header #top .list-links li a:hover {
+          color: #ef4334;
+          text-decoration: none; }
+    header #top .list-links li:last-child a:after {
+      display: none; }
+  header #top #create-order-link {
+    position: relative; }
+    header #top #create-order-link a {
+      text-decoration: none;
+      display: block;
+      background-color: #07b9d3;
+      color: #fff;
+      font-weight: 300;
+      padding: 13px 18px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      header #top #create-order-link a:hover:before {
+        border-right: 10px solid #ef4334; }
+      header #top #create-order-link a:hover {
+        text-decoration: none;
+        background-color: #ef4334; }
+      header #top #create-order-link a:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 0 solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #066e7d;
+        position: absolute;
+        left: -10px;
+        bottom: 0;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s; }
+
+header .center-header {
+  padding: 20px 0; }
+  header .center-header .phone-block a {
+    text-decoration: none;
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000; }
+    header .center-header .phone-block a:hover {
+      text-decoration: none; }
+      header .center-header .phone-block a:hover p {
+        color: #ef4334; }
+    header .center-header .phone-block a img {
+      max-width: 100%; }
+    header .center-header .phone-block a p {
+      margin-bottom: 0;
+      padding-left: 15px;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+  header .center-header .delivery-block p {
+    margin-bottom: 0;
+    padding-left: 10px;
+    font-weight: 300;
+    color: #ff7759; }
+  header .center-header .search-block-walp {
+    border: 2px solid #919191;
+    border-radius: 28px;
+    padding: 0 11px; }
+    header .center-header .search-block-walp input {
+      border: none;
+      min-width: 220px; }
+      header .center-header .search-block-walp input:active, header .center-header .search-block-walp input:focus {
+        outline: none;
+        -webkit-box-shadow: none;
+                box-shadow: none; }
+    header .center-header .search-block-walp i {
+      color: #919191;
+      font-size: 17px;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      header .center-header .search-block-walp i:hover {
+        color: #ef4334; }
+  header .center-header #cart {
+    position: relative; }
+    header .center-header #cart .dropdown-toggle::after {
+      display: none; }
+    header .center-header #cart button {
+      padding: 0;
+      margin-bottom: 10px; }
+    header .center-header #cart h3 {
+      font-weight: 100;
+      margin: 0;
+      font-size: 1rem; }
+    header .center-header #cart span.price {
+      font-weight: 300;
+      font-size: 1rem; }
+    header .center-header #cart .second {
+      padding-left: 35px; }
+    header .center-header #cart #cart-total {
+      font-size: .75rem;
+      color: #fff;
+      background-color: #0498ae;
+      padding: 1px 6px;
+      position: absolute;
+      top: 1px;
+      right: -20px;
+      border-radius: 50%; }
+  header .center-header #favorite a {
+    text-decoration: none;
+    display: block;
+    color: red;
+    font-weight: 300; }
+  header .center-header #favorite i {
+    color: red;
+    font-size: 22px; }
+  header .center-header #favorite p {
+    margin-bottom: 0;
+    text-decoration: underline;
+    padding-left: 5px; }
+  header .center-header #favorite .count {
+    color: #000;
+    padding-left: 5px; }
