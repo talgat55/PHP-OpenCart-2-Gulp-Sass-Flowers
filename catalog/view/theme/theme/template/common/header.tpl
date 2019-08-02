@@ -144,7 +144,32 @@
             </div>
         </div>
     </div>
+    <div class="bottom-header ">
+        <div class="container">
+            <div class="row">
+                <div class="first  col-md-2  d-flex align-items-center">
+                    <p>
+                        Каталог
+                    </p>
+                    <img src="/catalog/view/theme/theme/images/main/bar.png" alt="Иконка"/>
+                </div>
+                <div class="second col-md-10">
+                    <?php if(!empty($categories)){ ?>
+                        <ul class="list-links d-flex justify-content-between">
+                            <?php  foreach($categories as $category){  ?>
+                                <li>
+                                    <a href="<?php echo $category['href']; ?>" ><?php echo $category['name']; ?></a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    <?php  } ?>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 
 
 </header>
-

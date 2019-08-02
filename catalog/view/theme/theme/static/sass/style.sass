@@ -132,6 +132,9 @@ header
       button
         padding: 0
         margin-bottom: 10px
+        > div
+          width: 135px
+          margin: 0 0 0 auto
       h3
         font-weight: 100
         margin: 0
@@ -171,6 +174,98 @@ header
         padding-left: 5px
 
 
+//
+// Header bottom
+//
+header
+  .bottom-header
+    background-color: #ef4537
+    .first
+      p
+        margin-bottom: 0
+        margin-right: 13px
+        font-weight: 400
+        font-size: 1.25rem
+        color: #fff
+
+    .second
+      .list-links
+        margin: 0
+        padding: 0
+        li
+          list-style: none
+          a
+            text-decoration: none
+            color: #fff
+            font-size: 1.125rem
+            font-weight: 400
+            padding: 10.5px 5px
+            display: inline-block
+            transition: all .3s
+            &:hover
+              background-color: #cc3428
+
+
+
+//
+// Footer
+//
+footer
+  padding: 30px 0
+  font-family: $font_basic
+  background-size: cover!important
+  background: url("/catalog/view/theme/theme/images/main/footer.jpg")
+  .list-links,
+  .text-list
+    margin: 0
+    padding: 0
+
+  .list-links,
+  .text-list
+    li
+      list-style: none
+      a,
+      p
+        text-decoration: none
+        font-weight: 400
+        color: #fff
+        font-size: 1.125rem
+      a
+        transition: all .3s
+        &:hover
+          color: $main_color
+
+  .footer-logo
+    display: block
+    margin-bottom: 35px
+    transition: all .3s
+    &:hover
+      opacity: .6
+  .top
+    p
+      margin-bottom: 0
+      font-weight: 400
+      color: #fff
+      font-size: 1.125rem
+      padding-left: 12px
+    .footer-img-delivery
+      width: 36px
+      height: 36px
+
+  .bottom-copyright
+    display: block
+    margin-top: 35px
+    text-decoration: none
+    color: #fff
+    font-weight: 400
+    font-size: 1.125rem
+    transition: all .3s
+    &:hover
+      color: $main_color
+      text-decoration: none
+
+    span
+      text-decoration: underline
 
 
 

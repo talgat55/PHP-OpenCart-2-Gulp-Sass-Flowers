@@ -1,22 +1,21 @@
 <div id="cart" class="btn-group btn-block">
 
     <button type="button" data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>"
-            class="btn btn-inverse  btn-lg dropdown-toggle d-flex align-items-center">
-        <div class="position-relative first">
-            <img src="/catalog/view/theme/theme/images/main/cart.png" alt="Изображение"/>
-            <span id="cart-total"><?php echo $text_items; ?></span>
-        </div>
-        <div class="second">
-            <h3>
-                Корзина:
-            </h3>
-            <span class="price">
+            class="btn btn-inverse  btn-lg dropdown-toggle ">
+        <div class="d-flex align-items-center">
+            <div class="position-relative first">
+                <img src="/catalog/view/theme/theme/images/main/cart.png" alt="Изображение"/>
+                <span id="cart-total"><?php echo $text_items; ?></span>
+            </div>
+            <div class="second">
+                <h3>
+                    Корзина:
+                </h3>
+                <span class="price">
                 <?php echo $price_items; ?>
             </span>
-
+            </div>
         </div>
-
-
     </button>
 
     <ul class="dropdown-menu pull-right">
