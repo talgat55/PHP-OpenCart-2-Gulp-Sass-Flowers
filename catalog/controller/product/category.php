@@ -8,6 +8,8 @@ class ControllerProductCategory extends Controller {
 		$this->load->model('catalog/product');
 
 		$this->load->model('tool/image');
+        // load banner
+        $this->load->model('design/banner');
 
 		if (isset($this->request->get['filter'])) {
 			$filter = $this->request->get['filter'];
@@ -66,6 +68,7 @@ class ControllerProductCategory extends Controller {
 			$parts = explode('_', (string)$this->request->get['path']);
 
 			$category_id = (int)array_pop($parts);
+            $category_parent = isset($parts[0]) ?  $parts[0] : '';
 
 			foreach ($parts as $path_id) {
 				if (!$path) {
@@ -86,6 +89,7 @@ class ControllerProductCategory extends Controller {
 		} else {
 			$category_id = 0;
 		}
+
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
 
@@ -174,6 +178,29 @@ class ControllerProductCategory extends Controller {
 					'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
 				);
 			}
+			if(!empty($category_parent)){
+                $data['categories_parent'] = array();
+
+                $results = $this->model_catalog_category->getCategories($category_parent);
+
+                foreach ($results as $result) {
+                    $filter_data = array(
+                        'filter_category_id'  => $result['category_id'],
+                        'filter_sub_category' => true
+                    );
+
+                    $data['categories_parent'][] = array(
+                        'id' => $result['category_id'],
+                        'name' => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+                        'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+                    );
+                }
+            }
+
+
+            $data['category_current'] = !empty($category_id) ? $category_id : '0';
+
+
 
 			$data['products'] = array();
 
@@ -234,6 +261,8 @@ class ControllerProductCategory extends Controller {
 					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
 				);
 			}
+
+
 
 			$url = '';
 
@@ -371,6 +400,29 @@ class ControllerProductCategory extends Controller {
 			if ($limit && ceil($product_total / $limit) > $page) {
 			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page + 1), true), 'next');
 			}
+
+            // yandex map
+            $this->document->addScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU');
+
+            //  add show banner
+            $bannerOne = $this->model_design_banner->getBanner('6');
+            $bannerTwo = $this->model_design_banner->getBanner('8');
+
+
+            $data['bannerone']['image'] =  $this->model_tool_image->resize($bannerOne[0]['banner_image_id'],'557', '139');
+            $data['bannerone']['title'] =  $bannerOne[0]['title'];
+            $data['bannerone']['status'] =  $bannerOne[0]['status'];
+            $data['bannerone']['link'] =  $bannerOne[0]['link'];
+            $data['bannerone']['url'] =    $bannerOne[0]['image']  ?  $this->model_tool_image->resize($bannerOne[0]['image'],'557', '139') : '' ;
+
+            $data['bannertwo']['image'] =  $this->model_tool_image->resize($bannerTwo[0]['banner_image_id'],'557', '139');
+            $data['bannertwo']['title'] =  $bannerTwo[0]['title'];
+            $data['bannertwo']['status'] =  $bannerTwo[0]['status'];
+            $data['bannertwo']['link'] =  $bannerTwo[0]['link'];
+            $data['bannertwo']['url'] =    $bannerTwo[0]['image']  ?  $this->model_tool_image->resize($bannerTwo[0]['image'],'557', '139') : '' ;
+
+
+
 
 			$data['sort'] = $sort;
 			$data['order'] = $order;

@@ -4,17 +4,32 @@ body
   font-family: $font_basic
   font-size: 16px
   line-height: 1.5
-
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 a
   font-family: $font_basic
 
 // @media  (max-width: 600px)
+
+.main-title
+  font-family: $font_basic
+  font-size: 1.625rem
+  margin-top: 0
+  color: $main_color
+  margin-bottom: 20px
 
 
 //
 // Header
 //
 header
+  margin-bottom: 30px
   #top
     background-color: #f3f3f3
     .list-links
@@ -204,6 +219,149 @@ header
             transition: all .3s
             &:hover
               background-color: #cc3428
+
+
+
+//
+// Product
+//
+.product-page
+  .categories-block
+    margin-bottom: 40px
+    .text
+      color: $gray_color
+      font-size: 1.25rem
+      font-weight: 300
+
+    .lists-cats
+      margin: 0
+      padding: 0 0 0 25px
+      li
+        list-style: none
+        a
+          display: inline-block
+          color: $gray_color
+          font-weight: 300
+          padding: 4px 9px
+          border: 1px solid $main_color
+          margin-left: 8px
+          font-size: 1.25rem
+          &:hover,
+          &.active
+            background-color: $main_color
+            color: #fff
+            text-decoration: none
+
+
+
+
+  .product-list
+    margin: 0
+    padding: 0
+    li
+      list-style: none
+      &.product-item
+        margin-bottom: 75px
+        .image
+          margin-bottom: 10px
+          .add-wishlist
+            background: transparent
+            border: none
+            position: absolute
+            top: 0
+            right: 0
+            i
+              color: $main_color
+              transition: all .3s
+              opacity: .5
+        h3
+          margin: 0 0 15px
+          a
+            color: $gray_color
+            font-size: 1rem
+            text-decoration: none
+            transition: all .3s
+            display: inline-block
+            &:hover
+              color: $main_color
+              text-decoration: none
+        .price
+          margin: 0
+          font-weight: 400
+          font-size: 1.5rem
+          color: $gray_color
+        .add-to-cart
+          background-color: $main_color
+          padding: 5px 12px
+          font-weight: 400
+          color: #fff
+          border: none
+          transition: all .3s
+          &:hover
+            background-color: $alt_color
+
+  .info-block
+    margin-bottom: 45px
+    .content
+      font-size: 1.25rem
+      color: $gray_color
+      font-weight: 400
+      padding-left: 30px
+      span
+        font-size: 	0.75rem
+
+      a
+        text-decoration: none
+        color: $gray_color
+        transition: all .3s
+        &:hover
+          color: $main_color
+          text-decoration: none
+
+.product-page.bottom
+  h2
+    margin-top: 0
+    font-weight: 700
+    text-transform: uppercase
+    color: $gray_color
+    font-size: 1.625rem
+    margin-bottom: 60px
+
+.product-page.center
+  margin-bottom: 65px
+//
+// Map
+//
+#map
+  width: 100%
+  height: 355px
+  overflow: hidden
+  border-top-right-radius: 170px
+  border-bottom-right-radius: 170px
+
+.link-banner
+  img
+    max-width: 100%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -4,23 +4,23 @@
 jQuery(document).ready(function () {
 
 
-    homeSlider();
-    clickWishBlock();
-    changeInputForm();
-    carouselSetCategory();
-    instagram();
-    dropDownMenuCategories();
-    dropDownFiltersCategoryPage();
-    hideLeftBlockCAtegoryPage();
-    select2OnProductPage();
-    accordionTabInPageProduct();
-    showCategotyonMobile();
+    // homeSlider();
+    // clickWishBlock();
+    // changeInputForm();
+    // carouselSetCategory();
+    // instagram();
+    // dropDownMenuCategories();
+    // dropDownFiltersCategoryPage();
+    // hideLeftBlockCAtegoryPage();
+    // select2OnProductPage();
+    // accordionTabInPageProduct();
+    // showCategotyonMobile();
     mapInit();
-    reviewSlider();
-    addImageInMenu();
-    addDropDownMenu();
-    countDownPromotion();
-    hoverMenuItem();
+    // reviewSlider();
+    // addImageInMenu();
+    // addDropDownMenu();
+    // countDownPromotion();
+    // hoverMenuItem();
 
 
     /*
@@ -419,8 +419,8 @@ function mapInit() {
     if (jQuery('#map').length) {
         ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
-                    center: [55.857197, 37.558957],
-                    zoom: 18,
+                    center: [55.355408, 86.079472],
+                    zoom: 15,
                     controls: ['zoomControl']
                 }, {
                     // searchControlProvider: 'yandex#search'
@@ -431,7 +431,7 @@ function mapInit() {
                       '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
                   ),*/
 
-                myPlacemark = new ymaps.Placemark([55.857197, 37.558957], {
+                myPlacemark = new ymaps.Placemark([55.355408, 86.079472], {
                     id: '1'
                 }, {
 
@@ -440,12 +440,12 @@ function mapInit() {
                     iconLayout: 'default#image',
                     // Своё изображение иконки метки.
 
-                    iconImageHref: 'https://good-fighter.shop/catalog/view/theme/theme/image/main/marker.png',
+                    iconImageHref: 'https://localhost:6080/catalog/view/theme/theme/image/main/geo.png',
                     // Размеры метки.
-                    iconImageSize: [79, 103],
+                    iconImageSize: [28, 38],
                     // Смещение левого верхнего угла иконки относительно
                     // её "ножки" (точки привязки).
-                    iconImageOffset: [-39, -103]
+                    iconImageOffset: [-14, -38]
                 });
 
 
