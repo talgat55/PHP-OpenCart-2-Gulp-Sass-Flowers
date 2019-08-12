@@ -308,6 +308,15 @@ header .bottom-header {
   font-size: 1.625rem;
   margin-bottom: 60px; }
 
+.product-page.bottom .image-block:hover .main {
+  display: none; }
+
+.product-page.bottom .image-block:hover .hover {
+  display: inline-block !important; }
+
+.product-page.bottom .image-block .hover {
+  display: none; }
+
 .product-page.center {
   margin-bottom: 65px; }
 
@@ -320,6 +329,71 @@ header .bottom-header {
 
 .link-banner img {
   max-width: 100%; }
+
+.top-filter .list-group-item {
+  border: none; }
+
+.top-filter .noUi-marker-horizontal.noUi-marker {
+  display: none; }
+
+.top-filter .noUi-background,
+.top-filter #scale-price {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #ef4334;
+  height: 8px; }
+  .top-filter .noUi-background .noUi-connect,
+  .top-filter #scale-price .noUi-connect {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background: #07b9d3; }
+
+.top-filter .noUi-horizontal .noUi-handle {
+  width: 16px;
+  height: 16px;
+  left: -5px;
+  top: -4px;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #07b9d3;
+  border-radius: 50%;
+  overflow: hidden; }
+
+.top-filter .noUi-handle:after,
+.top-filter .noUi-handle:before {
+  display: none; }
+
+.top-filter .noUi-value-horizontal {
+  color: #303030;
+  font-size: 1.25rem;
+  font-weight: 300; }
+
+.top-filter .noUi-value-horizontal {
+  -webkit-transform: translate3d(-53%, 10%, 0);
+          transform: translate3d(-53%, 10%, 0); }
+
+.top-filter .scale {
+  margin-bottom: 70px; }
+
+.top-filter .ocfilter-option .option-name {
+  font-size: 0.875rem;
+  font-family: "Roboto", sans-serif; }
+
+#ocfilter-button .btn-primary {
+  top: 25px;
+  position: relative;
+  background-color: #07b9d3;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  #ocfilter-button .btn-primary:hover {
+    background-color: #ef4334; }
+  #ocfilter-button .btn-primary.disabled {
+    display: none; }
 
 footer {
   padding: 30px 0;

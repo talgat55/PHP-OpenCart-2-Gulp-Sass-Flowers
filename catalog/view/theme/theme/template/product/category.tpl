@@ -31,10 +31,8 @@
                     </ul>
                 </div>
             </div>
-
-
-
            <?php  }  ?>
+            <?= $column_left; ?>
 
             <?php if ($categories) { ?>
             <?php if (count($categories) <= 5) { ?>
@@ -156,7 +154,8 @@
                 <div class="col-lg-6 col-xs-12">
                     <div class="info-block d-flex  align-items-center">
                         <div class="image-block">
-                            <img src="/catalog/view/theme/theme/images/main/phone.jpg" alt="Иконка"/>
+                            <img  class="main" src="/catalog/view/theme/theme/images/main/phone.jpg" alt="Иконка"/>
+                            <img class="hover" src="/catalog/view/theme/theme/images/main/phone-red.jpg" alt="Иконка"/>
                         </div>
                         <div class="content">
                             <a href="tel:+7 (904)370-40-45" class="link" >
@@ -168,7 +167,8 @@
                 <div class="col-lg-6 col-xs-12">
                     <div class="info-block d-flex  align-items-center">
                         <div class="image-block">
-                            <img src="/catalog/view/theme/theme/images/main/mail.jpg" alt="Иконка"/>
+                            <img  class="main"  src="/catalog/view/theme/theme/images/main/mail.jpg" alt="Иконка"/>
+                            <img  class="hover"  src="/catalog/view/theme/theme/images/main/mail-red.jpg" alt="Иконка"/>
                         </div>
                         <div class="content">
                             <a href="mailto:buy@mrbuket.ru" class="link" >
@@ -181,7 +181,8 @@
                 <div class="col-lg-6 col-xs-12">
                     <div class="info-block d-flex  align-items-center">
                         <div class="image-block">
-                            <img src="/catalog/view/theme/theme/images/main/map.jpg" alt="Иконка"/>
+                            <img  class="main"  src="/catalog/view/theme/theme/images/main/map.jpg" alt="Иконка"/>
+                            <img  class="hover"  src="/catalog/view/theme/theme/images/main/map-red.jpg" alt="Иконка"/>
                         </div>
                         <div class="content">
                             г.Кемерово, ул. Ноградская, 22<br>
@@ -192,7 +193,8 @@
                 <div class="col-lg-6 col-xs-12">
                     <div class="info-block d-flex  align-items-center">
                         <div class="image-block">
-                            <img src="/catalog/view/theme/theme/images/main/blogging.jpg" alt="Иконка"/>
+                            <img  class="main"  src="/catalog/view/theme/theme/images/main/blogging.jpg" alt="Иконка"/>
+                            <img  class="hover"  src="/catalog/view/theme/theme/images/main/blogging-red.jpg" alt="Иконка"/>
                         </div>
                         <div class="content">
                             Наши отзывы
@@ -203,7 +205,8 @@
                 <div class="col-lg-6 col-xs-12">
                     <div class="info-block d-flex  align-items-center">
                         <div class="image-block">
-                            <img src="/catalog/view/theme/theme/images/main/inst.jpg" alt="Иконка"/>
+                            <img  class="main"  src="/catalog/view/theme/theme/images/main/inst.jpg" alt="Иконка"/>
+                            <img  class="hover"  src="/catalog/view/theme/theme/images/main/inst-red.jpg" alt="Иконка"/>
                         </div>
                         <div class="content">
                             Мы в Инстаграм
@@ -213,7 +216,8 @@
                 <div class="col-lg-6 col-xs-12">
                     <div class="info-block d-flex  align-items-center">
                         <div class="image-block">
-                            <img src="/catalog/view/theme/theme/images/main/vk.png" alt="Иконка"/>
+                            <img  class="main"  src="/catalog/view/theme/theme/images/main/vk.png" alt="Иконка"/>
+                            <img  class="hover"  src="/catalog/view/theme/theme/images/main/vk-red.jpg" alt="Иконка"/>
                         </div>
                         <div class="content">
                             Мы Вконтакте

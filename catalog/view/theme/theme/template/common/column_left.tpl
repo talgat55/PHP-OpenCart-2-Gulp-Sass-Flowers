@@ -1,5 +1,5 @@
 <?php if ($modules) { ?>
-<aside id="column-left" class="col-sm-3 hidden-xs">
+<aside  class="w-100 d-flex justify-content-center top-filter">
   <?php foreach ($modules as $module) { ?>
   <?php echo $module; ?>
   <?php } ?>

@@ -327,6 +327,16 @@ header
     font-size: 1.625rem
     margin-bottom: 60px
 
+  .image-block
+    &:hover
+      .main
+        display: none
+      .hover
+        display: inline-block!important
+    .hover
+       display: none
+
+
 .product-page.center
   margin-bottom: 65px
 //
@@ -343,20 +353,61 @@ header
   img
     max-width: 100%
 
+//
+// Filter
+//
+.top-filter
+  .list-group-item
+    border: none
+  .noUi-marker-horizontal.noUi-marker
+    display: none
+  .noUi-background,
+  #scale-price
+    border: none
+    box-shadow: none
+    background-color: $main_color
+    height: 8px
+    .noUi-connect
+      box-shadow: none
+      background: $alt_color
+  .noUi-horizontal .noUi-handle
+    width: 16px
+    height: 16px
+    left: -5px
+    top: -4px
+    border: none
+    box-shadow: none
+    background: $alt_color
+    border-radius: 50%
+    overflow: hidden
+  .noUi-handle:after,
+  .noUi-handle:before
+    display: none
+  .noUi-value-horizontal
+    color: #303030
+    font-size: 	1.25rem
+    font-weight: 300
+  .noUi-value-horizontal
+    transform: translate3d(-53%,10%,0)
+  .scale
+    margin-bottom: 70px
+  .ocfilter-option .option-name
+    font-size: 	0.875rem
+    font-family: $font_basic
 
+#ocfilter-button
+  .btn-primary
+    top: 25px
+    position: relative
+    background-color: $alt_color
+    border: none
+    font-family: $font_basic
+    transition: all .3s
+    &:hover
+      background-color: $main_color
 
-
-
-
-
-
-
-
-
-
-
-
-
+    &.disabled
+      display: none
 
 
 

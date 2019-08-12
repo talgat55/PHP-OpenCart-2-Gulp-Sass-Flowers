@@ -440,7 +440,7 @@ function mapInit() {
                     iconLayout: 'default#image',
                     // Своё изображение иконки метки.
 
-                    iconImageHref: 'https://localhost:6080/catalog/view/theme/theme/image/main/geo.png',
+                    iconImageHref: 'http://buket.lightxdesign.ru/catalog/view/theme/theme/images/main/geo.png',
                     // Размеры метки.
                     iconImageSize: [28, 38],
                     // Смещение левого верхнего угла иконки относительно
