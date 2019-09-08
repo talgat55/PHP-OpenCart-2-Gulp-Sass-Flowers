@@ -32,6 +32,8 @@
           rel="stylesheet">
     <link href="catalog/view/theme/theme/css/style.css" rel="stylesheet">
     <link href="catalog/view/theme/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="catalog/view/theme/theme/css/slick.css" rel="stylesheet">
+    <link href="catalog/view/theme/theme/css/slick-theme.css" rel="stylesheet">
 
     <?php foreach ($styles as $style) { ?>
     <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>"
@@ -39,6 +41,7 @@
     <?php } ?>
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+    <script src="catalog/view/theme/theme/js/slick.min.js" type="text/javascript"></script>
     <script src="catalog/view/theme/theme/js/default.js" type="text/javascript"></script>
     <?php foreach ($links as $link) { ?>
     <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>"/>
@@ -51,7 +54,7 @@
     <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-
+<div class="body-wrapper">
 <header>
 
     <?php  if(!empty($informations)) { ?>

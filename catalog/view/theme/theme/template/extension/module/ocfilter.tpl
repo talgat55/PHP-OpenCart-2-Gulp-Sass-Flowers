@@ -1,3 +1,4 @@
+
 <?php if ($options || $show_price) { ?>
 <div class="visible-xs" id="ocfilter-mobile">
     <?php  /*

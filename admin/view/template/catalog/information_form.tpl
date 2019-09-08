@@ -147,24 +147,6 @@
                   </div>
                 </div>
               </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="input-bottom">
-                        <span data-toggle="tooltip" title="Показывать в шапке">
-                            Показывать в шапке
-                        </span>
-                    </label>
-                    <div class="col-sm-10">
-                        <div class="checkbox">
-                            <label>
-                                <?php if ($top_bar) { ?>
-                                <input type="checkbox" name="top_bar" value="1" checked="checked" id="input-bottom" />
-                                <?php } else { ?>
-                                <input type="checkbox" name="top_bar" value="1" id="input-bottom" />
-                                <?php } ?>
-                            </label>
-                        </div>
-                    </div>
-                </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
                 <div class="col-sm-10">
