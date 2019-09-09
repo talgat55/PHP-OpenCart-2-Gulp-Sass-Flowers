@@ -55,6 +55,16 @@
                                         <div id="slider" min="1000" max="12000">
                                             <div id="custom-handle" class="ui-slider-handle"> <div class="float-value"></div></div>
                                         </div>
+
+                                        <div id="clear-filter" class="text-right">
+                                            <a href="#">
+                                                <img src="/catalog/view/theme/theme/images/main/close.png" alt="иконка" />
+                                                <span>
+                                                    Сбросить фильтр
+                                                </span>
+                                            </a>
+
+                                        </div>
                                     </div>
                                 </div>
                             </form>

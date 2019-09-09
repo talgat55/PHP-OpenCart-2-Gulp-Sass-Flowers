@@ -9,6 +9,13 @@ jQuery(document).ready(function () {
     homePageCarousel();
     activeElementByClick();
     priceSlider();
+
+
+
+    jQuery('a').click(function (e) {
+        e.preventDefault();
+    });
+
     /*
     * Match height
     */
@@ -93,13 +100,17 @@ function homePageCarousel() {
 //
 function activeElementByClick() {
     "use strict";
-    jQuery('.filter-block .radio-input').click(function (e) {
-
-        // jQuery('.filter-block .radio-input div').removeClass('active');
-        jQuery(this + ' .wrap').toggleClass('active');
-
+    var activeClass = '';
+    jQuery('.filter-block .radio-input input').change(function() {
+        if(this.checked) {
+            jQuery(this ).parent().parent().addClass('active');
+        }else{
+            jQuery(this ).parent().parent().removeClass('active');
+        }
 
     });
+
+
 }
 
 //

@@ -845,24 +845,55 @@ header
               transform: scale(.4)
               transition: transform .3s ease
 
-
+  .active-element
+    z-index: -1
+    position: absolute
+    top: -6px
+    left: 0
+    transition: all .3s
+    padding: 16px 15px
+    background-color: $alt_color
+    width: 98%
+    margin-left: 8px
+    border-radius: 17px
+    opacity: 0
   .active
     span
       color: #fff
 
     .active-element
-      z-index: -1
-      position: absolute
-      top: -5px
-      left: 0
-      padding: 16px 15px
-      background-color: $alt_color
-      width: 100%
-      margin-left: 8px
-      border-radius: 17px
+      opacity: 1
+
+  #clear-filter
+    margin-top: 50px
+    font-weight: 300
+    a
+      transition: all .3s
+      color: $gray_color
+      img
+        text-decoration: none
+
+      span
+        text-decoration: underline
+        padding-left: 2px
+
+      &:hover
+        color: $main_color
+        img
+          text-decoration: none
+
+
+
+
+
+
 
 .filter-block
   margin-bottom: 50px
+
+
+
+
 //
 // Footer
 //
