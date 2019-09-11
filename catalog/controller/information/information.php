@@ -54,6 +54,8 @@ class ControllerInformationInformation extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+            $data['id_info_block'] = $information_id;
+
 
 			$this->response->setOutput($this->load->view('information/information', $data));
 		} else {

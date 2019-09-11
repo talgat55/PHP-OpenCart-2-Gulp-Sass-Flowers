@@ -54,6 +54,11 @@
                                     <div class="second col-lg-4 col-md-12">
                                         <div id="slider" min="1000" max="12000">
                                             <div id="custom-handle" class="ui-slider-handle"> <div class="float-value"></div></div>
+                                            <div class="d-flex justify-content-between  price-between">
+                                                <div class="start">1000 р</div>
+                                                <div class="end">12000 р</div>
+
+                                            </div>
                                         </div>
 
                                         <div id="clear-filter" class="text-right">
