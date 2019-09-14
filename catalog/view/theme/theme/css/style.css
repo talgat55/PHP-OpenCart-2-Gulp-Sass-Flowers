@@ -961,7 +961,7 @@ header {
   text-decoration: none;
   background-color: #ef4334;
   padding: 10px 20px;
-  margin: 0 auto  50px auto;
+  margin: 0 auto 50px auto;
   display: table;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
@@ -1000,6 +1000,69 @@ header {
       .contact-page-section .wrap-info-block .content span {
         color: #303030;
         font-size: 0.875rem; }
+
+.information-information-6 h1 {
+  opacity: 0;
+  margin: 0;
+  height: 0;
+  overflow: hidden; }
+
+.information-information-6 #content {
+  display: none; }
+
+.pay-delivery-page-section {
+  position: relative;
+  overflow: hidden; }
+  .pay-delivery-page-section:nth-child(3):before {
+    content: "";
+    display: block;
+    right: 0;
+    position: absolute;
+    background: url("/catalog/view/theme/theme/images/main/bg-delivery.png");
+    background-repeat: no-repeat !important;
+    width: 700px;
+    height: 500px; }
+  .pay-delivery-page-section h2 {
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    color: #ef4334;
+    font-size: 1.625rem;
+    text-transform: uppercase;
+    margin-bottom: 35px; }
+  .pay-delivery-page-section .description {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 70px auto;
+    display: block;
+    font-size: 1.25rem; }
+  .pay-delivery-page-section .feature-row {
+    margin: 0 auto; }
+    .pay-delivery-page-section .feature-row .item {
+      margin-bottom: 90px; }
+      .pay-delivery-page-section .feature-row .item img {
+        margin: 0 auto 30px auto;
+        display: block; }
+      .pay-delivery-page-section .feature-row .item p {
+        text-align: center;
+        margin: 0;
+        font-size: 1.125rem; }
+        .pay-delivery-page-section .feature-row .item p span {
+          color: #07b9d3;
+          font-weight: bold; }
+  .pay-delivery-page-section .feature-row-alt .features-list {
+    margin: 0 0 49px;
+    padding: 0; }
+    .pay-delivery-page-section .feature-row-alt .features-list li {
+      list-style: none;
+      margin-bottom: 15px; }
+      .pay-delivery-page-section .feature-row-alt .features-list li img {
+        margin-right: 15px; }
+      .pay-delivery-page-section .feature-row-alt .features-list li p {
+        font-size: 1.125rem;
+        margin-bottom: 0; }
+        .pay-delivery-page-section .feature-row-alt .features-list li p span {
+          color: #07b9d3;
+          font-weight: bold; }
 
 footer {
   position: relative;

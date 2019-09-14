@@ -4,7 +4,80 @@
             <div class="row">
                 <div class="col-12">
                     <h1><?php echo $heading_title; ?></h1>
-                    <?php if ($id_info_block == '12') {  /*  page contacts */ ?>
+                    <?php if ($id_info_block == '6') {  /*  delivery payment page  */ ?>
+                        <section class="pay-delivery-page-section  position-relative">
+                            <h2 class="w-100 text-left">
+                                Оплата
+                            </h2>
+                            <p class="description">
+                                С другой стороны начало повседневной работы по формированию позиции требуют определения
+                                и уточнения систем массового участия. С другой стороны постоянное
+                                информационно-пропагандистское обеспечение нашей деятельности требуют определения и
+                                уточнения модели развития.
+
+                            </p>
+                            <div class="feature-row row">
+                                <div class="item col-lg-6 col-sm-12   ">
+                                    <img src="/catalog/view/theme/theme/images/main/pay.png" alt="иконка"/>
+                                    <p class="w-100">
+                                        <span>Через сайт</span><br>
+                                        Любым удобоным способом
+                                    </p>
+                                </div>
+                                <div class="item col-lg-6 col-sm-12   ">
+                                    <img src="/catalog/view/theme/theme/images/main/debit-card.png" alt="иконка"/>
+                                    <p class="w-100">
+                                        <span>Наличными или по карте</span><br>
+                                        при оформление самовывоза
+                                    </p>
+                                </div>
+
+                            </div>
+                        </section>
+                        <section class="pay-delivery-page-section  position-relative">
+                            <h2 class="w-100 text-left">
+                                Доставка
+                            </h2>
+                            <p class="description">
+                                С другой стороны начало повседневной работы по формированию позиции требуют определения
+                                и уточнения систем массового участия. С другой стороны постоянное
+                                информационно-пропагандистское обеспечение нашей деятельности требуют определения и
+                                уточнения модели развития.
+
+                            </p>
+                            <div class="feature-row-alt row   justify-content-center">
+                                <ul class="features-list">
+                                    <li class="d-flex align-items-center">
+                                        <img src="/catalog/view/theme/theme/images/main/list-item.png" alt="иконка"/>
+                                        <p>
+                                            <span>Бесплатная доставка</span> при заказе от 5 000р.
+                                        </p>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <img src="/catalog/view/theme/theme/images/main/list-item.png" alt="иконка"/>
+                                        <p>
+                                            <span>Центральный район</span> - 200р.
+                                        </p>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <img src="/catalog/view/theme/theme/images/main/list-item.png" alt="иконка"/>
+                                        <p>
+                                            <span>Ленинский, Рудничный, Заводской</span> - 250р.
+                                        </p>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <img src="/catalog/view/theme/theme/images/main/list-item.png" alt="иконка"/>
+                                        <p>
+                                            <span>Кедровка, пос.Новостройка </span> - 600р.
+                                        </p>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </section>
+                    <?php }
+                    if ($id_info_block == '12') {  /*  page contacts */ ?>
                         <section class="contact-page-section  position-relative">
                             <div class="col-12">
                                 <div class="row">
@@ -229,7 +302,7 @@
                             <?php $class = 'col-sm-12'; ?>
                         <?php } ?>
                         <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-                            <h1><?php echo $heading_title; ?></h1>
+
                             <?php echo $description; ?><?php echo $content_bottom; ?></div>
                         <?php echo $column_right; ?>
                     <?php } ?>
