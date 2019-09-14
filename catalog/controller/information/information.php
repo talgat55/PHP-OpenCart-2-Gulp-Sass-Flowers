@@ -17,6 +17,11 @@ class ControllerInformationInformation extends Controller {
 		} else {
 			$information_id = 0;
 		}
+        if($information_id =='12'){
+            // yandex map
+            $this->document->addScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU');
+
+        }
 
 		$information_info = $this->model_catalog_information->getInformation($information_id);
 
@@ -55,6 +60,7 @@ class ControllerInformationInformation extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
             $data['id_info_block'] = $information_id;
+
 
 
 			$this->response->setOutput($this->load->view('information/information', $data));

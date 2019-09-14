@@ -971,6 +971,36 @@ header {
     color: #fff;
     background-color: #07b9d3; }
 
+.contact-page-section {
+  margin-bottom: 70px; }
+  .contact-page-section .image-block:hover .main {
+    display: none; }
+  .contact-page-section .image-block:hover .hover {
+    display: inline-block !important; }
+  .contact-page-section .image-block .hover {
+    display: none; }
+  .contact-page-section h3 {
+    margin: 0 0 25px;
+    font-size: 1.375rem;
+    font-weight: 400;
+    color: #000; }
+  .contact-page-section .wrap-info-block {
+    margin-bottom: 45px; }
+    .contact-page-section .wrap-info-block a {
+      text-decoration: none;
+      color: #303030;
+      font-size: 1.25rem;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      .contact-page-section .wrap-info-block a:hover {
+        color: #ef4334; }
+    .contact-page-section .wrap-info-block .content {
+      margin-left: 20px; }
+      .contact-page-section .wrap-info-block .content span {
+        color: #303030;
+        font-size: 0.875rem; }
+
 footer {
   position: relative;
   padding: 30px 0;

@@ -12,9 +12,9 @@ jQuery(document).ready(function () {
 
 
 
-    jQuery('a').click(function (e) {
-        e.preventDefault();
-    });
+    // jQuery('a').click(function (e) {
+    //     e.preventDefault();
+    // });
 
     /*
     * Match height
