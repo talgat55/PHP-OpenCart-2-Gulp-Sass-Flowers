@@ -22,6 +22,10 @@ a
 .body-wrapper
   overflow-x: hidden
 
+.color-black
+  color: #000 !important
+
+
 .main-title
   font-family: $font_basic
   font-size: 1.625rem
@@ -1011,6 +1015,7 @@ header
   margin: 0 auto 50px auto
   display: table
   transition: all .3s
+  box-shadow: 0px 12px 20px 4px #d4d4d4
 
   &:hover
     text-decoration: none
@@ -1069,6 +1074,7 @@ header
     margin: 0
     height: 0
     overflow: hidden
+
   #content
     display: none
 
@@ -1140,6 +1146,326 @@ header
           span
             color: $alt_color
             font-weight: bold
+
+//
+// About page
+//
+.information-information-4
+  .bg-image
+    width: 100%
+    margin-bottom: 50px
+
+  .description
+    width: 90%
+    margin: 0 auto 70px auto
+    display: block
+    font-size: 1.25rem
+
+  .info-block
+    margin-bottom: 45px
+
+    .content
+      font-size: 1.25rem
+      color: $gray_color
+      font-weight: 400
+      padding-left: 30px
+
+      span
+        font-size: 0.75rem
+
+      a
+        text-decoration: none
+        color: $gray_color
+        transition: all .3s
+
+        &:hover
+          color: $main_color
+          text-decoration: none
+
+    .image-block
+      &:hover
+        .main
+          display: none
+
+        .hover
+          display: inline-block !important
+
+      .hover
+        display: none
+
+  .carousel-slider
+    margin: 0
+    padding: 0
+
+    li
+      list-style: none
+
+      .img-bg
+        height: 440px
+        width: 100%
+        background-size: cover !important
+        background-position: center center !important
+
+    .col-lg-6.half
+      .img-bg
+        height: 220px
+
+.information-information-7
+  #content
+    display: none
+
+  .description
+    width: 90%
+    margin: 0 auto 55px auto
+    display: block
+    font-size: 1.25rem
+    text-align: center
+
+  .list-steps
+    margin: 0 auto
+    padding: 0
+    width: 50%
+
+    li
+
+      list-style: none
+      margin-bottom: 75px
+
+      .img-block
+        width: 171px
+        position: relative
+
+        img
+          position: relative
+          z-index: 10
+
+      .content
+        padding-left: 40px
+
+        .title
+          margin-top: 30px
+          text-transform: uppercase
+          color: $main_color
+          margin-bottom: 25px
+          font-weight: bold
+
+        p
+          margin-bottom: 0
+
+          a
+            color: $main_color
+            transition: all .3s
+            text-decoration: underline
+
+            &.b-b
+              color: #000
+              font-weight: bold
+
+            &:hover
+              color: $alt_color
+              text-decoration: none
+
+    .item:nth-of-type(5n+1) .img-block
+      &::after
+        content: ""
+        background: url("/catalog/view/theme/theme/images/main/arrow1.png")
+        background-repeat: no-repeat !important
+        position: absolute
+        bottom: -114px
+        left: 0
+        z-index: 1
+        width: 50px
+        height: 168px
+
+    .item:nth-of-type(5n+2) .img-block
+      &::after
+        content: ""
+        background: url("/catalog/view/theme/theme/images/main/arrow2.png")
+        background-repeat: no-repeat !important
+        position: absolute
+        bottom: -160px
+        right: 0
+        z-index: 1
+        width: 50px
+        height: 168px
+
+    .item:nth-of-type(5n+3) .img-block
+      &::after
+        content: ""
+        background: url("/catalog/view/theme/theme/images/main/arrow3.png")
+        background-repeat: no-repeat !important
+        position: absolute
+        bottom: -153px
+        left: 0
+        z-index: 1
+        width: 50px
+        height: 168px
+
+    .item:nth-of-type(5n+4) .img-block
+      &::after
+        content: ""
+        background: url("/catalog/view/theme/theme/images/main/arrow4.png")
+        background-repeat: no-repeat !important
+        position: absolute
+        bottom: -153px
+        right: 0
+        z-index: 1
+        width: 50px
+        height: 168px
+
+//
+//  Product
+//
+[class^="product-product"]
+  #content
+    margin-top: 60px
+    .title-related
+      margin-bottom: 40px
+    .single
+      margin-bottom: 65px
+    .thumbnail
+      border-radius: 10px
+      overflow: hidden
+
+    .list-products-thumbnails-add
+      margin: 0
+      padding: 0
+
+      li
+        list-style: none
+
+    .description
+      h1
+        margin-top: 0
+        color: #000
+        font-size: 1.5625rem
+        font-weight: 400
+        border-bottom: 1.5px solid #dadada
+        padding-bottom: 10px
+        margin-bottom: 15px
+
+      .add-wishlist
+        font-size: 1.1875rem
+        font-weight: 300
+        padding: 0
+
+        *:active,
+        *:focus
+          outline: none
+
+        span
+          padding-left: 5px
+          white-space: nowrap
+
+        i
+          color: $main_color
+
+      .prices
+        color: $main_color
+        font-weight: 500
+        font-size: 1.5625rem
+        margin-bottom: 0
+
+      #button-cart
+        font-size: 1.5rem
+        background-color: $main_color
+        border: none
+        text-transform: uppercase
+        border-radius: 12px
+        transition: all .3s
+        width: 360px
+
+        &:hover
+          background-color: $alt_color
+          color: #fff
+
+        &:active,
+        &:focus
+          outline: none
+
+      .item-desc
+        margin-bottom: 30px
+        font-weight: 300
+        font-size: 1.125rem
+
+        .content
+          *
+            font-size: 1.125rem
+            font-weight: 300
+
+        h4
+          margin-top: 0
+          font-size: 1.5rem
+          margin-bottom: 15px
+
+      .item-info
+        margin-bottom: 20px
+        opacity: .4
+        transition: all .3s
+
+        &:hover
+          opacity: 1
+
+        h4
+          margin: 0
+          font-weight: normal
+          text-transform: uppercase
+          padding-left: 11px
+
+        p
+          margin-bottom: 0
+          font-weight: 300
+          font-size: 0.875rem
+
+    .related-list
+      .product-thumb
+        margin-bottom: 75px
+        padding: 0 20px
+        .image
+          margin-bottom: 10px
+
+          .add-wishlist
+            background: transparent
+            border: none
+            position: absolute
+            top: 0
+            right: 0
+
+            i
+              color: $main_color
+              transition: all .3s
+              opacity: .5
+
+        h3
+          margin: 0 0 15px
+
+          a
+            color: $gray_color
+            font-size: 1rem
+            text-decoration: none
+            transition: all .3s
+            display: inline-block
+
+            &:hover
+              color: $main_color
+              text-decoration: none
+
+        .price
+          margin: 0
+          font-weight: 400
+          font-size: 1.5rem
+          color: $gray_color
+
+        .add-to-cart
+          background-color: $main_color
+          padding: 5px 12px
+          font-weight: 400
+          color: #fff
+          border: none
+          transition: all .3s
+
+          &:hover
+            background-color: $alt_color
 
 
 //

@@ -9,7 +9,7 @@ jQuery(document).ready(function () {
     homePageCarousel();
     activeElementByClick();
     priceSlider();
-
+    productCarousel();
 
 
     // jQuery('a').click(function (e) {
@@ -90,6 +90,49 @@ function homePageCarousel() {
     jQuery(arrowClass + ' .carousel-arrows__right-link').click(function (e) {
         e.preventDefault();
         jQuery(this).parent().parent().parent().find(listClass).slick('slickNext');
+    });
+
+}
+//
+// Carousel  Products
+//
+function productCarousel() {
+    "use strict";
+
+    var listClass = '.related-list';
+
+    jQuery(listClass).slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ],
+        autoplay: true
     });
 
 

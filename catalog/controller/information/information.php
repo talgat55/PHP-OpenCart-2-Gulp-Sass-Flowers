@@ -4,7 +4,7 @@ class ControllerInformationInformation extends Controller {
 		$this->load->language('information/information');
 
 		$this->load->model('catalog/information');
-
+        $this->load->model('design/banner');
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -17,7 +17,7 @@ class ControllerInformationInformation extends Controller {
 		} else {
 			$information_id = 0;
 		}
-        if($information_id =='12'){
+        if($information_id =='12'  || $information_id =='4'){
             // yandex map
             $this->document->addScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU');
 
@@ -61,6 +61,27 @@ class ControllerInformationInformation extends Controller {
 			$data['header'] = $this->load->controller('common/header');
             $data['id_info_block'] = $information_id;
 
+
+            $banner = $this->model_design_banner->getBanner('12');
+
+            if ($this->request->server['HTTPS']) {
+                $image_path = $this->config->get('config_ssl') . 'image/';
+            } else {
+                $image_path = $this->config->get('config_url') . 'image/';
+            }
+            $arr_banner = [];
+            foreach ($banner as $value){
+                array_push($arr_banner,[
+                    'image' => $this->model_tool_image->resize($value['banner_image_id'], '1920', '540'),
+                    'title' => htmlspecialchars_decode($value['title']),
+                    'status' => $value['status'],
+                    'link' => $value['link'],
+                    'url' => $image_path . $value['image'],
+                ]);
+
+            }
+
+            $data['banner'] = $arr_banner;
 
 
 			$this->response->setOutput($this->load->view('information/information', $data));

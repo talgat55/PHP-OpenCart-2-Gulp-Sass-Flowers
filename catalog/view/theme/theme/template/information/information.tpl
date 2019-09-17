@@ -4,7 +4,263 @@
             <div class="row">
                 <div class="col-12">
                     <h1><?php echo $heading_title; ?></h1>
-                    <?php if ($id_info_block == '6') {  /*  delivery payment page  */ ?>
+                    <?php if ($id_info_block == '7') {  /*  how create order   */ ?>
+                        <section class="how-create-order-page-section  position-relative">
+                            <div class="description">
+                                <?php echo $description; ?>
+                            </div>
+                            <ul class="list-steps">
+                                <li class="item d-lg-flex">
+                                    <div class="img-block">
+                                        <img src="/catalog/view/theme/theme/images/main/order1.png" alt="картинка"/>
+                                    </div>
+
+                                    <div class="content">
+                                        <h3 class="title">
+                                            шаг 1
+                                        </h3>
+                                        <p>
+                                            Выберите любой понравившийся букет
+                                            из нашего каталога и добавьте его в корзину
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="item d-lg-flex">
+                                    <div class="img-block">
+                                        <img src="/catalog/view/theme/theme/images/main/order2.png" alt="картинка"/>
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="title">
+                                            шаг 2
+                                        </h3>
+                                        <p>
+                                            Перейдите в корзину и нажмите кнопку<br>
+                                            <a href="/ckeckout">Оформить заказ</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="item d-lg-flex">
+                                    <div class="img-block">
+                                        <img src="/catalog/view/theme/theme/images/main/order3.png" alt="картинка"/>
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="title">
+                                            шаг 3
+                                        </h3>
+                                        <p>
+                                            Заполните всю необходимую информацию,
+                                            выберите способ <a class="b-b" href="#">доставки</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="item d-lg-flex">
+                                    <div class="img-block">
+                                        <img src="/catalog/view/theme/theme/images/main/order4.png" alt="картинка"/>
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="title">
+                                            шаг 4
+                                        </h3>
+                                        <p>
+                                            Оплатите заказ любым удобным
+                                            для Вас способом
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li class="item d-lg-flex">
+                                    <div class="img-block">
+                                        <img src="/catalog/view/theme/theme/images/main/order5.png" alt="картинка"/>
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="title">
+                                            готово
+                                        </h3>
+                                        <p>
+                                            Наш менеджер свяжется с Вами
+                                            для уточнения деталей заказа
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="w-100  mb-4">
+                                <a href="#" class="link-order">
+                                   перейти к покупкам
+                                </a>
+                            </div>
+
+                        </section>
+                    <?php } else if ($id_info_block == '4') {  /*  about page  */ ?>
+                        <section class="about-page-section  position-relative">
+                            <img class="bg-image" src="/catalog/view/theme/theme/images/main/bg-about.jpg"
+                                 alt="баннер"/>
+                            <p class="description  text-center">
+                                <b>Не следует, однако забывать, что реализация намеченных плановых заданий в
+                                    значительной степени обуславливает создание форм развития</b>. Товарищи! рамки и
+                                место обучения
+                                кадров
+                                представляет собой интересный эксперимент проверки направлений прогрессивного развития.
+                                Не следует, однако забывать, что консультация с широким активом требуют от нас анализа
+                                систем массового участия. Идейные соображения высшего порядка, а также новая модель
+                                организационной деятельности требуют определения и уточнения существенных финансовых и
+                                административных условий. Не следует, однако забывать, что дальнейшее развитие различных
+                                форм деятельности представляет собой интересный эксперимент проверки направлений
+                                прогрессивного развития. Не следует, однако забывать, что постоянный количественный рост
+                                и сфера нашей активности играет важную роль в формировании дальнейших направлений
+                                развития.<br>
+                                <br>
+                                <b>
+                                    Равным образом укрепление и развитие структуры обеспечивает широкому кругу
+                                    (специалистов) участие в формировании модели развития. Идейные соображения высшего
+                                    порядка, а также реализация намеченных плановых заданий требуют от нас анализа
+                                    дальнейших направлений развития.</b>
+                            </p>
+
+
+                            <?php
+
+                            $banners = array_chunk($banner, 4);
+                            var_dump($banners);
+                            ?>
+                            <ul class="carousel-slider">
+                                <?php foreach ($banners as $banner_value) : ?>
+                                    <li class="row">
+                                        <?php
+                                        foreach ($banner_value as $key => $value) : ?>
+                                            <?php
+                                            if ($key == '1') {
+                                                $class = 'col-lg-6 half';
+                                            } else if ($key == '2' || $key == '3') {
+                                                continue;
+                                            } else {
+                                                $class = 'col-lg-6';
+                                            }
+                                            ?>
+                                            <div class="<?= $class; ?> col-md-12">
+                                                <div class="img-bg"
+                                                     style="  background: url(<?php echo $value['url']; ?>); "></div>
+                                                <?php if ($key == '2' || $key == '3') {
+
+
+                                                } ?>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+
+                            <h2 class="text-left color-black">
+                                Контакты
+                            </h2>
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-xs-12">
+                                            <div class="info-block d-flex  align-items-center">
+                                                <div class="image-block">
+                                                    <img class="main"
+                                                         src="/catalog/view/theme/theme/images/main/phone.jpg"
+                                                         alt="Иконка"/>
+                                                    <img class="hover"
+                                                         src="/catalog/view/theme/theme/images/main/phone-red.jpg"
+                                                         alt="Иконка"/>
+                                                </div>
+                                                <div class="content">
+                                                    <a href="tel:+7 (904)370-40-45" class="link">
+                                                        +7 (904)370-40-45
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xs-12">
+                                            <div class="info-block d-flex  align-items-center">
+                                                <div class="image-block">
+                                                    <img class="main"
+                                                         src="/catalog/view/theme/theme/images/main/mail.jpg"
+                                                         alt="Иконка"/>
+                                                    <img class="hover"
+                                                         src="/catalog/view/theme/theme/images/main/mail-red.jpg"
+                                                         alt="Иконка"/>
+                                                </div>
+                                                <div class="content">
+                                                    <a href="mailto:buy@mrbuket.ru" class="link">
+                                                        buy@mrbuket.ru
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-xs-12">
+                                            <div class="info-block d-flex  align-items-center">
+                                                <div class="image-block">
+                                                    <img class="main"
+                                                         src="/catalog/view/theme/theme/images/main/map.jpg"
+                                                         alt="Иконка"/>
+                                                    <img class="hover"
+                                                         src="/catalog/view/theme/theme/images/main/map-red.jpg"
+                                                         alt="Иконка"/>
+                                                </div>
+                                                <div class="content">
+                                                    г.Кемерово, ул. Ноградская, 22<br>
+                                                    <span>(вход со стороны ул.Ноградской)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xs-12">
+                                            <div class="info-block d-flex  align-items-center">
+                                                <div class="image-block">
+                                                    <img class="main"
+                                                         src="/catalog/view/theme/theme/images/main/blogging.jpg"
+                                                         alt="Иконка"/>
+                                                    <img class="hover"
+                                                         src="/catalog/view/theme/theme/images/main/blogging-red.jpg"
+                                                         alt="Иконка"/>
+                                                </div>
+                                                <div class="content">
+                                                    Наши отзывы
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-xs-12">
+                                            <div class="info-block d-flex  align-items-center">
+                                                <div class="image-block">
+                                                    <img class="main"
+                                                         src="/catalog/view/theme/theme/images/main/inst.jpg"
+                                                         alt="Иконка"/>
+                                                    <img class="hover"
+                                                         src="/catalog/view/theme/theme/images/main/inst-red.jpg"
+                                                         alt="Иконка"/>
+                                                </div>
+                                                <div class="content">
+                                                    Мы в Инстаграм
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xs-12">
+                                            <div class="info-block d-flex  align-items-center">
+                                                <div class="image-block">
+                                                    <img class="main" src="/catalog/view/theme/theme/images/main/vk.png"
+                                                         alt="Иконка"/>
+                                                    <img class="hover"
+                                                         src="/catalog/view/theme/theme/images/main/vk-red.jpg"
+                                                         alt="Иконка"/>
+                                                </div>
+                                                <div class="content">
+                                                    Мы Вконтакте
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <div id="map"></div>
+                                </div>
+                            </div>
+                        </section>
+                    <?php } else if ($id_info_block == '6') {  /*  delivery payment page  */ ?>
                         <section class="pay-delivery-page-section  position-relative">
                             <h2 class="w-100 text-left">
                                 Оплата
