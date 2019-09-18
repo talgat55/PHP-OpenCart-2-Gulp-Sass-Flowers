@@ -1,11 +1,11 @@
 <?php
 class ControllerAccountWishList extends Controller {
 	public function index() {
-		if (!$this->customer->isLogged()) {
-			$this->session->data['redirect'] = $this->url->link('account/wishlist', '', true);
-
-			$this->response->redirect($this->url->link('account/login', '', true));
-		}
+//		if (!$this->customer->isLogged()) {
+//			$this->session->data['redirect'] = $this->url->link('account/wishlist', '', true);
+//
+//			$this->response->redirect($this->url->link('account/login', '', true));
+//		}
 
 		$this->load->language('account/wishlist');
 
@@ -74,11 +74,11 @@ class ControllerAccountWishList extends Controller {
 			$product_info = $this->model_catalog_product->getProduct($result['product_id']);
 
 			if ($product_info) {
-				if ($product_info['image']) {
-					$image = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_wishlist_width'), $this->config->get($this->config->get('config_theme') . '_image_wishlist_height'));
-				} else {
-					$image = false;
-				}
+                if ($product_info['image']) {
+                    $image = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+                } else {
+                    $image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+                }
 
 				if ($product_info['quantity'] <= 0) {
 					$stock = $product_info['stock_status'];
