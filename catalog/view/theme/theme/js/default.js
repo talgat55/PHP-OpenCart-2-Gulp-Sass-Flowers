@@ -5,7 +5,7 @@ jQuery(document).ready(function () {
 
 
     mapInit();
-
+    aboutPageSlider();
     homePageCarousel();
     activeElementByClick();
     priceSlider();
@@ -237,3 +237,28 @@ function mapInit() {
     }
 }
 
+//
+// About page slider
+//
+function aboutPageSlider() {
+    "use strict";
+    var listClass = jQuery('.carousel-slider');
+    if (listClass.length) {
+        jQuery(listClass).slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false
+        });
+        jQuery(' .list-arrows .left').click(function (e) {
+            e.preventDefault();
+            jQuery(this).parent().parent().parent().parent().find(listClass).slick('slickPrev');
+        });
+
+
+        jQuery(' .list-arrows .right').click(function (e) {
+            e.preventDefault();
+            jQuery(this).parent().parent().parent().parent().find(listClass).slick('slickNext');
+        });
+    }
+}

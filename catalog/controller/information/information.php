@@ -20,6 +20,8 @@ class ControllerInformationInformation extends Controller {
         if($information_id =='12'  || $information_id =='4'){
             // yandex map
             $this->document->addScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU');
+            $this->document->addStyle('catalog/view/theme/theme/css/lightbox.min.css');
+            $this->document->addScript('catalog/view/theme/theme/js/lightbox.min.js');
 
         }
 

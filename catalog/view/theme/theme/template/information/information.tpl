@@ -86,7 +86,7 @@
 
                             <div class="w-100  mb-4">
                                 <a href="#" class="link-order">
-                                   перейти к покупкам
+                                    перейти к покупкам
                                 </a>
                             </div>
 
@@ -121,34 +121,59 @@
                             <?php
 
                             $banners = array_chunk($banner, 4);
-                            var_dump($banners);
+
                             ?>
+
+                            <h2 class="heading-two"> МАГАЗИН mr.buket</h2>
                             <ul class="carousel-slider">
                                 <?php foreach ($banners as $banner_value) : ?>
-                                    <li class="row">
-                                        <?php
-                                        foreach ($banner_value as $key => $value) : ?>
+                                    <li class=" item">
+                                        <div class="row ">
                                             <?php
-                                            if ($key == '1') {
-                                                $class = 'col-lg-6 half';
-                                            } else if ($key == '2' || $key == '3') {
-                                                continue;
-                                            } else {
-                                                $class = 'col-lg-6';
-                                            }
-                                            ?>
-                                            <div class="<?= $class; ?> col-md-12">
-                                                <div class="img-bg"
-                                                     style="  background: url(<?php echo $value['url']; ?>); "></div>
-                                                <?php if ($key == '2' || $key == '3') {
+                                            foreach ($banner_value as $key => $value) : ?>
+                                                <?php
+                                                if ($key == '1') {
+                                                    $class = 'col-lg-12 half';
+                                                    echo '<div class="row col-lg-6"> ';
+                                                } else if ($key == '2' || $key == '3') {
+                                                    $class = 'col-lg-6 half';
+                                                } else {
+                                                    $class = 'col-lg-6';
+                                                }
+                                                ?>
+                                                <div class="<?= $class; ?>  sub-item col-md-12">
+
+                                                    <a class="img-bg" href="<?php echo $value['url']; ?>"
+                                                       data-lightbox="image-1"
+                                                       style="display: block;  background: url(<?php echo $value['url']; ?>); ">
+                                                        <div class="wrapper"></div>
+                                                    </a>
 
 
+                                                </div>
+                                                <?php if ($key == '3') {
+                                                    echo '</div> ';
                                                 } ?>
-                                            </div>
-                                        <?php endforeach; ?>
+                                            <?php endforeach; ?>
+                                        </div>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
+                            <div class="arrow-block d-flex justify-content-center">
+                                <ul class="list-arrows d-flex">
+                                    <li>
+                                        <a href="#" class="left">
+                                            <img src="/catalog/view/theme/theme/images/main/arrow-left-about.jpg"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="right">
+                                            <img src="/catalog/view/theme/theme/images/main/arrow-right-about.jpg"/>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
 
                             <h2 class="text-left color-black">
                                 Контакты
