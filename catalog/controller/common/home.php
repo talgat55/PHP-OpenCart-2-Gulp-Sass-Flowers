@@ -120,7 +120,8 @@ class ControllerCommonHome extends Controller
 //        var_dump($newArrayAttributes);
         foreach ($results_pack as $result) {
             if ($result['image']) {
-                $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+                $image = $image_path .$result['image'];
+
             } else {
                 $image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
             }
@@ -180,7 +181,8 @@ class ControllerCommonHome extends Controller
 
         foreach ($results_boxes as $result) {
             if ($result['image']) {
-                $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+                $image =  $image_path .$result['image'];
+
             } else {
                 $image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
             }
@@ -238,7 +240,9 @@ class ControllerCommonHome extends Controller
 
         foreach ($results_boxes as $result) {
             if ($result['image']) {
-                $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+//                $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+                $image =$image_path .$result['image'];
+
             } else {
                 $image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
             }
@@ -296,7 +300,8 @@ class ControllerCommonHome extends Controller
 
         foreach ($results_toys as $result) {
             if ($result['image']) {
-                $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+//                $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+                $image =$image_path .$result['image'];
             } else {
                 $image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
             }
@@ -355,7 +360,8 @@ class ControllerCommonHome extends Controller
 
         foreach ($results_filter as $result) {
             if ($result['image']) {
-                $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+//                $image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+                $image =$image_path .$result['image'];
             } else {
                 $image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
             }

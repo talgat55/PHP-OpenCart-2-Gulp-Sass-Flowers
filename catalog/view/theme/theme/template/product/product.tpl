@@ -29,13 +29,13 @@
 
                             <?php } ?>
                             <?php if ($images) { ?>
-                                <ul class="list-products-thumbnails-add">
+                                <ul class="list-products-thumbnails-add  d-flex">
                                     <?php foreach ($images as $image) { ?>
                                         <li class="image-additional">
                                             <a class="thumbnail"
                                                href="<?php echo $image['popup']; ?>"
                                                title="<?php echo $heading_title; ?>">
-                                                <img
+                                                <img  width="75" height="75"
                                                         src="<?php echo $image['thumb']; ?>"
                                                         title="<?php echo $heading_title; ?>"
                                                         alt="<?php echo $heading_title; ?>"/>

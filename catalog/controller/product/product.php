@@ -290,15 +290,21 @@ class ControllerProductProduct extends Controller {
 			}
 
 			$this->load->model('tool/image');
-
+            if ($this->request->server['HTTPS']) {
+                $image_path = $this->config->get('config_ssl') . 'image/';
+            } else {
+                $image_path = $this->config->get('config_url') . 'image/';
+            }
 			if ($product_info['image']) {
-				$data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
+				$data['popup'] = $image_path . $product_info['image'];
 			} else {
 				$data['popup'] = '';
 			}
 
 			if ($product_info['image']) {
-				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
+//				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
+				$data['thumb'] =  $image_path. $product_info['image'];
+
 				$this->document->setOgImage($data['thumb']);
 			} else {
 				$data['thumb'] = '';
@@ -310,8 +316,8 @@ class ControllerProductProduct extends Controller {
 
 			foreach ($results as $result) {
 				$data['images'][] = array(
-					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height')),
-					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+                    'popup' =>  $image_path . $result['image'],
+                    'thumb' =>  $image_path . $result['image']
 				);
 			}
 

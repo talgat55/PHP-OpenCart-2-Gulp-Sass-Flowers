@@ -87,6 +87,8 @@
                                         <a href="<?php echo $product['href']; ?>">
                                             <img src="<?php echo $product['thumb']; ?>"
                                                  alt="<?php echo $product['name']; ?>"
+                                                 width="260"
+                                                 height="260"
                                                  title="<?php echo $product['name']; ?>" class="img-responsive"/>
                                         </a>
                                     </div>
@@ -167,6 +169,8 @@
                                         <a href="<?php echo $product['href']; ?>">
                                             <img src="<?php echo $product['thumb']; ?>"
                                                  alt="<?php echo $product['name']; ?>"
+                                                 width="260"
+                                                 height="260"
                                                  title="<?php echo $product['name']; ?>" class="img-responsive"/>
                                         </a>
                                     </div>
@@ -236,6 +240,8 @@
                                             <a href="<?php echo $product['href']; ?>">
                                                 <img src="<?php echo $product['thumb']; ?>"
                                                      alt="<?php echo $product['name']; ?>"
+                                                     width="260"
+                                                     height="260"
                                                      title="<?php echo $product['name']; ?>" class="img-responsive"/>
                                             </a>
                                         </div>
@@ -303,6 +309,8 @@
                                         <a href="<?php echo $product['href']; ?>">
                                             <img src="<?php echo $product['thumb']; ?>"
                                                  alt="<?php echo $product['name']; ?>"
+                                                 width="260"
+                                                 height="260"
                                                  title="<?php echo $product['name']; ?>" class="img-responsive"/>
                                         </a>
                                     </div>
@@ -398,6 +406,8 @@
                                             <a href="<?php echo $product['href']; ?>">
                                                 <img src="<?php echo $product['thumb']; ?>"
                                                      alt="<?php echo $product['name']; ?>"
+                                                     width="260"
+                                                     height="260"
                                                      title="<?php echo $product['name']; ?>" class="img-responsive"/>
                                             </a>
                                         </div>
