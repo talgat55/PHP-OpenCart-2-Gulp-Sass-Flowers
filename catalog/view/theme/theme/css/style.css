@@ -1424,6 +1424,78 @@ header {
       [class^="product-product"] #content .related-list .product-thumb .add-to-cart:hover {
         background-color: #07b9d3; }
 
+.information-shop_rating .shop_rates_list.row {
+  margin: 0 -30px; }
+
+.information-shop_rating .shop_summary_rating {
+  background-color: #07b9d3;
+  border: none;
+  color: #fff; }
+
+.information-shop_rating h1 {
+  margin-bottom: 0; }
+
+.information-shop_rating .rating_btn.add_rating-button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#1ca4b7), to(#09b7d1));
+  background: -o-linear-gradient(top, #1ca4b7 0%, #09b7d1 100%);
+  background: linear-gradient(180deg, #1ca4b7 0%, #09b7d1 100%);
+  font-size: 20px;
+  border: none;
+  -webkit-box-shadow: 1px 1px 14px 9px #eee;
+          box-shadow: 1px 1px 14px 9px #eee;
+  padding: 9px 25px;
+  border-radius: 0;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .information-shop_rating .rating_btn.add_rating-button:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ef4334), to(#ef4334));
+    background: -o-linear-gradient(top, #ef4334 0%, #ef4334 100%);
+    background: linear-gradient(180deg, #ef4334 0%, #ef4334 100%);
+    color: #fff; }
+  .information-shop_rating .rating_btn.add_rating-button:focus, .information-shop_rating .rating_btn.add_rating-button:active {
+    outline: none; }
+
+.information-shop_rating .wrapper-title {
+  margin-bottom: 35px; }
+
+.information-shop_rating .ratings-item {
+  border: none;
+  margin-bottom: 60px; }
+  .information-shop_rating .ratings-item .top-block {
+    margin-bottom: -45px; }
+    .information-shop_rating .ratings-item .top-block img {
+      height: 118px; }
+    .information-shop_rating .ratings-item .top-block .text {
+      padding-left: 10px;
+      font-size: 18px; }
+  .information-shop_rating .ratings-item .content-item {
+    -webkit-box-shadow: 1px 1px 12px 6px #eee;
+            box-shadow: 1px 1px 12px 6px #eee;
+    margin: 10px 0 0 0;
+    padding: 45px 22px 22px 22px;
+    border-radius: 5px; }
+    .information-shop_rating .ratings-item .content-item .ratings-item-comment {
+      min-height: 145px; }
+    .information-shop_rating .ratings-item .content-item.hide-block {
+      padding-bottom: 10px; }
+      .information-shop_rating .ratings-item .content-item.hide-block .ratings-item-comment {
+        height: 145px;
+        overflow: hidden;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s; }
+    .information-shop_rating .ratings-item .content-item .link-dropdown {
+      font-weight: 300;
+      font-size: 14px;
+      color: #ef4334;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+      .information-shop_rating .ratings-item .content-item .link-dropdown:hover {
+        text-decoration: none;
+        color: #303030; }
+
 footer {
   position: relative;
   padding: 30px 0;

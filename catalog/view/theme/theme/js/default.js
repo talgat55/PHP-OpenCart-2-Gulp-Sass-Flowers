@@ -10,7 +10,7 @@ jQuery(document).ready(function () {
     activeElementByClick();
     priceSlider();
     productCarousel();
-
+    reviewShowBlock();
 
     // jQuery('a').click(function (e) {
     //     e.preventDefault();
@@ -259,6 +259,32 @@ function aboutPageSlider() {
         jQuery(' .list-arrows .right').click(function (e) {
             e.preventDefault();
             jQuery(this).parent().parent().parent().parent().find(listClass).slick('slickNext');
+        });
+    }
+}
+
+//
+// About page slider
+//
+function reviewShowBlock() {
+    "use strict";
+    if(jQuery('.content-item').length){
+        jQuery('.content-item .link-dropdown').click(function (e) {
+            e.preventDefault();
+            var contentItemWithText = jQuery(this).parent().parent().find('.ratings-item-comment div');
+            var contentItem = jQuery(this).parent().parent().find('.ratings-item-comment');
+            console.log(jQuery(this).hasClass('active-link'));
+            if(jQuery(this).hasClass('active-link')){
+                contentItem.removeAttr("style");
+                jQuery(this).removeClass('active-link');
+
+            }else{
+
+                jQuery(this).addClass('active-link');
+                contentItem.css('height', contentItemWithText.height() );
+            }
+
+
         });
     }
 }

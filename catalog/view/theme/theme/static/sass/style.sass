@@ -1558,6 +1558,76 @@ header
 
 
 //
+// Reviews
+//
+.information-shop_rating
+  .shop_rates_list.row
+    margin: 0 -30px
+
+  .shop_summary_rating
+    background-color: $alt_color
+    border: none
+    color: #fff
+  h1
+    margin-bottom: 0
+
+  .rating_btn.add_rating-button
+    background: linear-gradient(180deg, rgba(28, 164, 183, 1) 0%, rgba(9, 183, 209, 1) 100%)
+    font-size: 20px
+    border: none
+    box-shadow: 1px 1px 14px 9px #eee
+    padding: 9px 25px
+    border-radius: 0
+    transition: all .3s
+    &:hover
+      background: linear-gradient(180deg, $main_color 0%, $main_color 100%)
+      color: #fff
+
+    &:focus,
+    &:active
+      outline: none
+
+  .wrapper-title
+    margin-bottom: 35px
+
+  .ratings-item
+    border: none
+    margin-bottom: 60px
+    .top-block
+      margin-bottom: -45px
+      img
+        height: 118px
+
+      .text
+        padding-left: 10px
+        font-size: 18px
+    .content-item
+      box-shadow: 1px 1px 12px 6px #eee
+      margin: 10px 0 0 0
+      padding: 45px 22px 22px 22px
+      border-radius: 5px
+      .ratings-item-comment
+        min-height: 145px
+
+      &.hide-block
+        padding-bottom: 10px
+        .ratings-item-comment
+          height: 145px
+          overflow: hidden
+          transition: all .3s
+
+
+      .link-dropdown
+        font-weight: 300
+        font-size: 14px
+        color: $main_color
+        transition: all .3s
+        &:hover
+          text-decoration: none
+          color: $gray_color
+
+
+//
 // Footer
 //
 footer
