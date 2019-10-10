@@ -1427,6 +1427,11 @@ header {
 .information-shop_rating .shop_rates_list.row {
   margin: 0 -30px; }
 
+.information-shop_rating .description-section {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto 60px auto; }
+
 .information-shop_rating .shop_summary_rating {
   background-color: #07b9d3;
   border: none;
