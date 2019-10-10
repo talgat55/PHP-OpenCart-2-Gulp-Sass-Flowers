@@ -83,7 +83,14 @@ class ControllerExtensionModuleSobfeedback extends Controller{
 		if (isset($setting['sobfeedback_modal'])) {
 				return $this->load->view('extension/module/sobfeedback_modal', $data);
 		} else {
-				return $this->load->view('extension/module/sobfeedback', $data);
+		    if($data['module_id'] == '33'){
+                return $this->load->view('extension/module/sobfeedback_33', $data);
+            }else{
+                return $this->load->view('extension/module/sobfeedback', $data);
+            }
+
+
+
 		}
 		
 		

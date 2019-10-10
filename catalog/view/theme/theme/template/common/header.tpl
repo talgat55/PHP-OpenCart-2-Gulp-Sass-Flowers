@@ -41,7 +41,10 @@
     <?php } ?>
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+
     <script src="catalog/view/theme/theme/js/slick.min.js" type="text/javascript"></script>
+    <script src="catalog/view/theme/theme/js/jquery.mask.min.js" type="text/javascript"></script>
+
     <script src="catalog/view/theme/theme/js/default.js" type="text/javascript"></script>
     <?php foreach ($links as $link) { ?>
         <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>"/>
@@ -74,6 +77,7 @@
                                 </ul>
                             </nav>
                         </div>
+
                         <div class="col-lg-2 col-xs-12">
                             <div id="create-order-link">
                                 <a href="#">

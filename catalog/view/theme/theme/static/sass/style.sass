@@ -1154,8 +1154,10 @@ header
   .bg-image
     width: 100%
     margin-bottom: 50px
+
   #content
     display: none
+
   .description
     width: 90%
     margin: 0 auto 70px auto
@@ -1193,6 +1195,7 @@ header
 
       .hover
         display: none
+
   .heading-two
     text-align: left
     color: #303030
@@ -1211,6 +1214,7 @@ header
         width: 100%
         background-size: cover !important
         background-position: center center !important
+
         &::before
           content: ""
           display: block
@@ -1219,12 +1223,12 @@ header
           left: 0
           width: 100%
           height: 100%
-          background-color: rgba(239,67,52,.5)
+          background-color: rgba(239, 67, 52, .5)
           opacity: 0
           transition: all .3s
+
         &:hover::before
           opacity: 1
-
 
 
         .wrapper
@@ -1270,9 +1274,9 @@ header
       a
         margin: 2.5px
         transition: all .3s
+
         &:hover
           opacity: .5
-
 
 
 .information-information-7
@@ -1564,6 +1568,7 @@ header
 .information-shop_rating
   .shop_rates_list.row
     margin: 0 -30px
+
   .description-section
     width: 80%
     text-align: center
@@ -1573,6 +1578,7 @@ header
     background-color: $alt_color
     border: none
     color: #fff
+
   h1
     margin-bottom: 0
 
@@ -1584,6 +1590,7 @@ header
     padding: 9px 25px
     border-radius: 0
     transition: all .3s
+
     &:hover
       background: linear-gradient(180deg, $main_color 0%, $main_color 100%)
       color: #fff
@@ -1598,24 +1605,29 @@ header
   .ratings-item
     border: none
     margin-bottom: 60px
+
     .top-block
       margin-bottom: -45px
+
       img
         height: 118px
 
       .text
         padding-left: 10px
         font-size: 18px
+
     .content-item
       box-shadow: 1px 1px 12px 6px #eee
       margin: 10px 0 0 0
       padding: 45px 22px 22px 22px
       border-radius: 5px
+
       .ratings-item-comment
         min-height: 145px
 
       &.hide-block
         padding-bottom: 10px
+
         .ratings-item-comment
           height: 145px
           overflow: hidden
@@ -1627,10 +1639,110 @@ header
         font-size: 14px
         color: $main_color
         transition: all .3s
+
         &:hover
           text-decoration: none
           color: $gray_color
 
+//
+// Modal
+//
+#custom-modal
+  position: fixed
+  z-index: 99
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  opacity: 0
+  visibility: hidden
+  transition: all .3s
+
+  .panel.panel-default
+    width: 535px
+    background-color: $alt_color
+    border-radius: 30px
+    padding: 35px
+
+    .panel-heading
+      font-weight: bold
+      font-size: 1.75rem
+      color: #fff
+      margin-bottom: 20px
+
+    .close
+      opacity: 1
+      position: absolute
+      float: none
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+
+      &:hover
+        opacity: .5
+
+    .policy-block
+      font-weight: 300
+      font-size: 12px
+      color: #fff
+      margin-bottom: 15px
+    .policy-block a
+      font-weight: 300
+      font-size: 12px
+      color: #fff
+      transition: all .3s
+      text-decoration: underline
+      &:hover
+        color: $main_color
+        text-decoration: none
+
+    .form-group
+      .submit-button
+        display: block
+        background-color: $main_color
+        color: #fff
+        font-size: 18px
+        font-weight: 300
+        width: 100%
+        border: none
+        border-radius: 10px
+        padding: 10px
+        transition: all .3s
+        &:hover
+          background-color: #313131
+          color: #fff
+
+      label
+        display: block
+        text-align: center
+        font-weight: 500
+        color: #fff
+        font-size: 1.375rem
+        margin-bottom: 10px
+
+      .form-control
+        border: 2px solid #157e8e
+        border-radius: 10px
+        padding: 22px 20px
+
+    .form-group:last-child
+      margin-bottom: 0
+
+#overlay-layer
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 88
+  background-color: rgba(255,255,255,.5)
+  transition: all .3s
+  opacity: 0
+  visibility: hidden
+
+.active-element
+  opacity: 1!important
+  visibility: visible!important
 
 //
 // Footer

@@ -113,6 +113,12 @@ class ControllerCommonFooter extends Controller {
 			$this->model_tool_online->addOnline($ip, $this->customer->getId(), $url, $referer);
 		}
 
+        $sobfeedback = new sobfeedback($this->registry);
+        $data['sobfeedback_id33'] = $sobfeedback->initFeedback(33);
+
+
+
+
 		return $this->load->view('common/footer', $data);
 	}
 }

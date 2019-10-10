@@ -11,20 +11,12 @@ jQuery(document).ready(function () {
     priceSlider();
     productCarousel();
     reviewShowBlock();
+    modalAction();
+   //  mask input
+    if (jQuery('#sobInput33-2').length) {
+        jQuery('#sobInput33-2').mask('+0(000) 000-0000');
+    }
 
-    // jQuery('a').click(function (e) {
-    //     e.preventDefault();
-    // });
-
-    /*
-    * Match height
-    */
-    // var product_item = jQuery('.latest-block .product-layout, .products-row .product-layout');
-    // if (product_item.length) {
-    //
-    //     product_item.matchHeight();
-    //
-    // }
 
 
     // end redy function
@@ -287,4 +279,20 @@ function reviewShowBlock() {
 
         });
     }
+}
+//
+// Modal
+//
+function modalAction() {
+    "use strict";
+
+        jQuery('#create-order-link a').click(function (e) {
+            e.preventDefault();
+            jQuery('#custom-modal, #overlay-layer').addClass('active-element');
+        });
+
+         jQuery('#overlay-layer, #custom-modal .close').click(function (e) {
+            e.preventDefault();
+            jQuery('#custom-modal, #overlay-layer').removeClass('active-element');
+        });
 }
