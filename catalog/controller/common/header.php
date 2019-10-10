@@ -105,10 +105,21 @@ class ControllerCommonHeader extends Controller {
 
         foreach ($this->model_catalog_information->getInformations() as $result) {
             if ($result['status']  && $result['top_bar']  ) {
-                $data['informations'][] = array(
-                    'title' => $result['title'],
-                    'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
-                );
+
+               if($result['title']== 'Отзывы') {
+                   $data['informations'][] = array(
+                       'title' => $result['title'],
+                       'href'  => '/shoprating'
+                   );
+               }else{
+                   $data['informations'][] = array(
+                       'title' => $result['title'],
+                       'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+                   );
+               }
+
+
+
             }
         }
 

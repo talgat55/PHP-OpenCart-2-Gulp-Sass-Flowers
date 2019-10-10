@@ -1507,7 +1507,7 @@ footer {
   font-family: "Roboto", sans-serif;
   background-size: cover !important;
   background: url("/catalog/view/theme/theme/images/main/footer-bg.jpg");
-  z-index: -2; }
+  z-index: 0; }
   footer:before {
     content: "";
     background: url("/catalog/view/theme/theme/images/main/footer-icon-two.png");
