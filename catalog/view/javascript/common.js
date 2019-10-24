@@ -144,10 +144,10 @@ var cart = {
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart > button').button('loading');
+				// $('#cart > button').button('loading');
 			},
 			complete: function() {
-				$('#cart > button').button('reset');
+				// $('#cart > button').button('reset');
 			},
 			success: function(json) {
 				$('.alert, .text-danger').remove();
@@ -161,7 +161,8 @@ var cart = {
 
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
-						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+						$('#cart > button #cart-total').html(json['total'].price);
+						$('#cart > button .second .price').html(json['total'].count);
 					}, 100);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
