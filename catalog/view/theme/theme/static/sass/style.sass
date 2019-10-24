@@ -16,6 +16,11 @@ h6,
 a
   font-family: $font_basic
 
+input:focus,
+input:active
+  outline: none!important
+  box-shadow: none!important
+
 .page-wrap
   margin-top: 45px
 // @media  (max-width: 600px)
@@ -41,10 +46,11 @@ a
   color: $gray_color
   margin: 0 0 35px
 
-
+#button-search,
 .link__alt
   font-family: $font_basic
   font-weight: 400
+  border: none
   text-decoration: none
   transition: all .3s
   display: inline-block
@@ -207,6 +213,10 @@ header
       button
         padding: 0
         margin-bottom: 10px
+        &:active,
+        &:focus
+          outline: none
+          box-shadow: none
 
         > div
           width: 127px
@@ -432,6 +442,7 @@ header
 //
 // Product
 //
+.product-search,
 .wishlist-page,
 .products-filter-list-section,
 .products-list-section,
@@ -1745,6 +1756,50 @@ header
   visibility: visible!important
 
 //
+// Pagination
+//
+.pagination
+  li
+    margin: 0 2px
+    a,
+    span
+      padding: 3px 8px
+      display: inline-block
+      text-decoration: none
+      font-size: 14px
+      color: #000
+      border: 1px solid #000
+      transition: all .3s
+      &:hover
+        background-color: #07b9d3
+        border-color: #07b9d3
+        color: #fff
+
+
+
+    &.active
+      span,
+      a
+        border-color: $main_color
+        background-color: $main_color
+        color: #fff
+
+  .no-border
+    border: none
+    transition: all .3s
+    &:hover
+      opacity: .5
+      background: transparent
+
+//
+// Search page
+//
+.product-search
+  .checkbox-inline
+    margin-bottom: 0
+
+
+//
 // Footer
 //
 footer
@@ -1833,6 +1888,9 @@ footer
 
     span
       text-decoration: underline
+
+
+
 
 @media (max-width: 1420px)
   .middle-banner.position-relative
