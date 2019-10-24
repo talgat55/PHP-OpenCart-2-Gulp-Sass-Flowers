@@ -10,7 +10,11 @@ class ControllerProductCategory extends Controller {
 		$this->load->model('tool/image');
         // load banner
         $this->load->model('design/banner');
-
+        $this->document->addScript('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js');
+        $this->document->addScript('https://rawgit.com/simeydotme/jQuery-ui-Slider-Pips/master/src/js/jquery-ui-slider-pips.js');
+//
+        $this->document->addStyle('https://simeydotme.github.io/jQuery-ui-Slider-Pips/dist/css/jqueryui.min.css');
+        $this->document->addStyle('https://rawgit.com/simeydotme/jQuery-ui-Slider-Pips/master/dist/jquery-ui-slider-pips.css');
 		if (isset($this->request->get['filter'])) {
 			$filter = $this->request->get['filter'];
 		} else {
@@ -212,6 +216,12 @@ class ControllerProductCategory extends Controller {
 				'start'              => ($page - 1) * $limit,
 				'limit'              => $limit
 			);
+
+            $minPrice = $this->model_catalog_product->minPriceProducts();
+            $maxPrice = $this->model_catalog_product->maxPriceProducts();
+            $data['minPrice'] = intval($minPrice);
+            $data['maxPrice'] = intval($maxPrice);
+
 
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
