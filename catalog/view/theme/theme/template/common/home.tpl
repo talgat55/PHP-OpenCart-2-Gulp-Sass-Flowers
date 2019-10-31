@@ -35,7 +35,7 @@
                         </h2>
                         <div class="filter-block">
                             <form>
-                                <div class="d-flex">
+                                <div class="row">
                                     <div class="first col-lg-8 col-md-12 row">
                                         <?php foreach($filter_attributes as $attribute){ ?>
                                         <label class="radio-input col-md-3 position-relative">

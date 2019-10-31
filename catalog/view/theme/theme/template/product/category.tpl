@@ -11,7 +11,8 @@
         <?php } ?>
         <div id="content" class="col-md-12 col-xs-12 "><?php echo $content_top; ?>
             <h1 class="main-title"><?php echo $heading_title; ?></h1>
-            <?php  if($categories): ?>
+            <?php if ($categories): ?>
+            <div class="filter-page-wrapper">
                 <div class="d-flex w-100 align-items-center  categories-block">
                     <div class="text">
                         Тематические подборки:
@@ -22,8 +23,9 @@
                             <?php foreach ($categories as $category_item) { ?>
 
                                 <li>
-                                    <a href="<?= $category_item['href']; ?>"
-                                       class="<?php echo ($category_current == $category_item['id']) ? 'active' : ''; ?>">
+                                    <a href="#"
+                                       data-id="<?php echo $category_item['category_id']; ?>"
+                                    >
                                         <?= $category_item['name']; ?>
                                     </a>
                                 </li>
@@ -31,9 +33,9 @@
                         </ul>
                     </div>
                 </div>
-            <?php endif; ?>
+                <?php endif; ?>
 
-            <?php /*if ($categories) { ?>
+                <?php /*if ($categories) { ?>
                 <?php if (count($categories) <= 5) { ?>
                     <div class="row">
                         <div class="col-sm-3">
@@ -59,39 +61,40 @@
                     </div>
                 <?php } ?>
             <?php } */ ?>
-            <div class="row filter-block  ">
-                <div class="col-lg-4"></div>
-                <div class="second col-lg-4 col-md-12">
-                    <div id="slider" min="<?php echo $minPrice; ?>" max="<?php echo $maxPrice; ?>">
-                        <div id="custom-handle" class="ui-slider-handle">
-                            <div class="float-value"></div>
-                        </div>
-                        <div class="d-flex justify-content-between  price-between">
-                            <div class="start"><?php echo $minPrice; ?> р</div>
-                            <div class="end"><?php echo $maxPrice; ?> р</div>
+                <div class="row filter-block  ">
+                    <div class="col-lg-4"></div>
+                    <div class="second col-lg-4 col-md-12">
+                        <div id="slider" min="<?php echo $minPrice; ?>" max="<?php echo $maxPrice; ?>">
+                            <div id="custom-handle" class="ui-slider-handle">
+                                <div class="float-value"></div>
+                            </div>
+                            <div class="d-flex justify-content-between  price-between">
+                                <div class="start"><?php echo $minPrice; ?> р</div>
+                                <div class="end"><?php echo $maxPrice; ?> р</div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div id="clear-filter" class="text-right m-0">
-                        <a href="#">
-                            <img src="/catalog/view/theme/theme/images/main/close.png" alt="иконка">
-                            <span>
+                    <div class="col-lg-4">
+                        <div id="clear-filter" class="text-right m-0">
+                            <a href="#">
+                                <img src="/catalog/view/theme/theme/images/main/close.png" alt="иконка">
+                                <span>
                                   Сбросить фильтр
                             </span>
-                        </a>
+                            </a>
+
+                        </div>
 
                     </div>
-
                 </div>
             </div>
             <?= $column_left; ?>
 
             <?php if ($products) { ?>
 
-                <div class="row">
-                    <ul class="product-layout product-list row">
+                <div class="row w-100">
+                    <ul class="product-layout product-list row  w-100">
                         <?php foreach ($products as $product) { ?>
                             <li class=" product-item  col-lg-3 col-md-6  col-xs-12">
                                 <div class="product-thumb">
