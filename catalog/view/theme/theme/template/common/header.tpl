@@ -58,6 +58,63 @@
 </head>
 <body class="<?php echo $class; ?>">
 <div class="body-wrapper">
+    <a id="mobile-toggle" href="#menu" class="mobile-toggle hamburger hamburger--collapse hamburger--3dx  ">
+                                 <span class="hamburger-box">
+                                     <span class="hamburger-inner"></span>
+                                 </span>
+    </a>
+    <div id="mobile-block" class="d-flex align-items-center justify-content-center w-100">
+        <div class="text-center">
+            <div class="logo-mobile">
+                <?php if ($home == $og_url) { ?>
+                    <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>"
+                         alt="<?php echo $name; ?>"
+                         class="img-responsive"/>
+                <?php } else { ?>
+                    <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>"
+                                                        title="<?php echo $name; ?>"
+                                                        alt="<?php echo $name; ?>"
+                                                        class="img-responsive"/></a>
+                <?php } ?>
+            </div>
+            <div class="mobile-navigation">
+                <ul class="list-links ">
+                    <?php foreach ($informations as $information) { ?>
+                        <li>
+                            <a href="<?php echo $information['href']; ?>">
+                                <?php echo $information['title']; ?>
+                            </a>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <div class="bottom">
+                <div class="mobile-search">
+                    <?php echo $search; ?>
+                </div>
+                <div  class="last">
+                    <a href="tel:+7 (904)370-40-45" class="d-flex align-items-center  justify-content-center">
+                        <img src="/catalog/view/theme/theme/images/main/phone-icon.png" alt="Иконка"/>
+                        <p>
+                            +7 (904)370-40-45
+                        </p>
+                    </a>
+                    <a href="/wishlist/" class="wish-block d-flex  align-items-center justify-content-center">
+                        <i class="fas fa-heart"></i>
+                        <div class="d-flex">
+                            <p>
+                                Избранное:
+                            </p>
+                            <span class="count">
+                                    <?php echo $text_wishlist; ?>
+                                </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <header>
 
         <?php if (!empty($informations)) { ?>
@@ -145,8 +202,6 @@
                                     <?php echo $text_wishlist; ?>
                                 </span>
                                 </div>
-
-
                             </a>
                         </div>
 
@@ -167,14 +222,14 @@
                     <div class="second col-md-10">
                         <?php if (!empty($categories)) { ?>
                             <ul class="list-links d-flex justify-content-between">
-                                <?php foreach ($categories as $category) { ?>
+                                <?php foreach ($categories as $key => $category) { ?>
                                     <li>
                                         <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
                                     </li>
+                                    <?php if ($key == '6') break; ?>
                                 <?php } ?>
                             </ul>
                         <?php } ?>
-
                     </div>
                 </div>
             </div>

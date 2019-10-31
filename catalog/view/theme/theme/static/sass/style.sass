@@ -1905,6 +1905,176 @@ footer
       text-decoration: underline
 
 
+//
+// Mobile block
+//
+#mobile-block
+  display: block
+  width: 100%
+  height: 120%
+  top: 0
+  left: -100%
+  background-color: #fff
+  z-index: 80
+  position: fixed
+  transition: all ease-out .3s
+  &.is-active
+    left: 0
+
+  .logo-mobile
+    margin-bottom: 30px
+
+  .mobile-navigation
+    margin-bottom: 20px
+
+    ul
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+
+        a
+          color: #000
+
+  .mobile-search
+    margin-bottom: 20px
+
+    button
+      display: none
+
+  .bottom
+    .last
+      p
+        margin-bottom: 0
+        padding-left: 10px
+        font-size: 15px
+      a
+        color: #000
+        font-size: 15px
+        margin-bottom: 30px
+
+
+#mobile-toggle
+  position: fixed
+  bottom: 75px
+  display: block
+  right: 20px
+  transition: all .6s
+  z-index: 999
+  .navigation-top-mobile
+    padding: 130px 30px 0 30px
+    .list-inline>li
+      display: block
+  .menu-menu-lk
+    padding-top: 0!important
+    background: transparent!important
+    li:after
+      display: none!important
+    li
+      display: block
+      a
+        padding: 0 30px
+        font-size: 18px
+
+
+
+.hamburger-box
+  position: relative
+  display: inline-block
+  width: 40px
+  height: 24px
+
+
+.hamburger-inner
+  display: block
+  top: 50%
+  margin-top: -2px
+
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+  width: 40px
+  height: 4px
+  background-color: #333
+  border-radius: 4px
+  position: absolute
+  transition-property: transform
+  transition-duration: 0.15s
+  transition-timing-function: ease
+
+
+.hamburger-inner::before, .hamburger-inner::after
+  content: ""
+  display: block
+
+
+.hamburger-inner::before
+  top: -10px
+
+
+.hamburger-inner::after
+  bottom: -10px
+
+
+.hamburger
+  padding: 15px 10px
+  display: none
+  cursor: pointer
+  transition-property: opacity, filter
+  transition-duration: 0.15s
+  transition-timing-function: linear
+  font: inherit
+  color: inherit
+  text-transform: none
+  background-color: transparent
+  border: 0
+  margin: 0
+  overflow: visible
+  position: absolute
+  bottom: 75px
+  right: 20px
+  cursor: pointer
+  z-index: 99999
+
+.hamburger:hover
+  opacity: 0.7
+
+
+.hamburger.is-active:hover
+  opacity: 0.7
+
+
+
+
+.hamburger-inner, .hamburger-inner::after,
+.hamburger-inner::before
+  background-color: #333
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after
+  background-color: #000
+
+.hamburger--3dx .hamburger-box
+  perspective: 80px
+
+.hamburger--3dx .hamburger-inner
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1)
+.hamburger--3dx .hamburger-inner::before,
+.hamburger--3dx .hamburger-inner::after
+  transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1)
+
+.hamburger--3dx.is-active .hamburger-inner
+  background-color: transparent !important
+  transform: rotateY(180deg)
+.hamburger--3dx.is-active .hamburger-inner::before
+  transform: translate3d(0, 10px, 0) rotate(45deg)
+.hamburger--3dx.is-active .hamburger-inner::after
+  transform: translate3d(0, -10px, 0) rotate(-45deg)
+
+
+
+
+
+
 
 
 @media (max-width: 1420px)
@@ -1921,10 +2091,166 @@ footer
     &:after
       right: 0
 
+@media (max-width: 1200px)
+  header
+    #top
+      .col-lg-2
+        padding-left: 0!important
+
+      .list-links
+        li
+          a
+            padding: 7px 7px!important
+            &:after
+              display: none!important
+
+      #create-order-link
+        a
+          padding: 13px 10px
+
+    .center-header
+      .search-block-walp
+        input
+          min-width: 160px
+
+  #logo
+    img
+      height: 50px
+
+
 @media (min-width: 992px)
   .mb-lg-90
     margin-bottom: 90px
 
+@media (max-width: 1024px)
+  .home-banner
+    .content
+      .text,
+      span
+        font-size: 50px!important
+
+
 @media (max-width: 991px)
   .mb-sm-30
     margin-bottom: 30px
+
+
+@media (max-width: 993px)
+  header
+    .bottom-header .second,
+    .col-1.delivery-block,
+    .search-block,
+    .phone-block,
+    .wish-block,
+    #cart .second,
+    #top
+      display: none!important
+
+
+  .center-header
+    #cart
+      button > div
+        width: 60px
+
+  .bottom-header
+    padding: 10px 0
+
+
+  .home-banner
+    height: 290px
+    margin-bottom: 35px
+    .content
+      .text,
+      span
+        font-size: 35px!important
+        text-align: left
+    .link
+      display: inline-block!important
+
+  .common-home
+    .filter-block
+      #slider
+        width: 100%
+        margin: 30px 0 0 0
+
+  #map
+    border-radius: 0!important
+
+  .information-information-7
+    .list-steps
+      .item
+        .img-block::after
+          display: none!important
+
+  .information-information-8
+    .banner-section
+      .text
+        font-size: 2.6875rem!important
+        padding-left: 15px
+
+    .featured-section
+      .item
+        margin: 0 auto!important
+        display: table!important
+
+  .information-information-8
+    .featured-section
+      .page-wrap
+        h2
+          margin-bottom: 0!important
+      .second
+        .item
+          margin: 0 auto!important
+
+  .information-information-4
+    .carousel-slider
+      .col-lg-6
+        padding: 0!important
+
+    .description
+      width: 100%
+
+  .pay-delivery-page-section
+    .description
+      width: 100%
+      margin: 0 auto 40px auto
+    .feature-row
+      .item
+        margin-bottom: 40px
+
+@media (max-width: 768px)
+  .product-layout
+    .product-item
+      .image
+        a
+          display: table
+          margin: 0 auto
+
+  .link-banner
+    display: block
+    margin-bottom: 15px
+
+  .information-information-7
+    .list-steps
+      width: 90%
+
+    li
+      margin-bottom: 35px
+
+      .content
+        padding-left: 0!important
+        .title
+          margin-top: 10px!important
+          margin-bottom: 10px!important
+
+  .information-information-7
+    .description
+      width: 100%
+      text-align: left
+
+
+@media (max-width: 600px)
+  .information-information-7
+    .list-steps
+      width: 100%
+

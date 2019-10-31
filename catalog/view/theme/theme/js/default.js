@@ -11,13 +11,15 @@ jQuery(document).ready(function () {
     priceSlider();
     productCarousel();
     reviewShowBlock();
+    closeAlertModal();
     modalAction();
     filterOnPageProducts();
+    mobileMenu();
     //  mask input
+
     if (jQuery('#sobInput33-2').length) {
         jQuery('#sobInput33-2').mask('+0(000) 000-0000');
     }
-
 
     // end redy function
 });
@@ -331,7 +333,6 @@ function  checkActiveCats(tempCat){
         if (jQuery(this).find('a').hasClass('active')) {
             tempCat = tempCat + ',' + jQuery(this).find('a').attr('data-id');
         }
-
     });
     console.log(tempCat);
     ajaxProduct(tempCat);
@@ -350,5 +351,29 @@ function ajaxProduct(cat = '', price = '') {
         var products = jQuery(data).find('.product-layout .product-item ');
 
         jQuery('.product-layout.product-list.row').html(' ').append(products);
+    });
+}
+
+/**
+ * Hide block alert after add item in cart
+ */
+function closeAlertModal(){
+    "use strict";
+    jQuery('body').on('click', '.alert .close', function() {
+        jQuery('.alert').css('display', 'none');
+    });
+}
+//----------------------------------
+//   Mobile Menu
+//------------------------------------
+function mobileMenu() {
+    "use strict";
+    let menuClass = '#mobile-toggle';
+    let mobileClass = jQuery('#mobile-block');
+    let bodyClass = 'body';
+    jQuery(bodyClass).on('click', menuClass, function () {
+        mobileClass.toggleClass('is-active');
+        jQuery(menuClass).toggleClass('is-active');
+        return false;
     });
 }
