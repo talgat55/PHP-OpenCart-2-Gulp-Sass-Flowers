@@ -161,7 +161,7 @@
                                         $dropDown = false;
                                     }
                                     ?>
-                                    <div class="content-item  <?=$class; ?>">
+                                    <div class="content-item  <?= $class; ?>">
                                         <div class="ratings-item-comment">
                                             <div>
                                                 <?php echo nl2br($rating['comment']); ?>
@@ -170,7 +170,7 @@
 
                                         </div>
                                         <div class="w-100 d-flex justify-content-end">
-                                            <?php if($dropDown){ ?>
+                                            <?php if ($dropDown) { ?>
                                                 <a href="#" class="link-dropdown">
                                                     Раскрыть
                                                 </a>
@@ -204,12 +204,12 @@
                                 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data"
                                       class="newShopRatingForm">
                                     <button data-remodal-action="close" class="remodal-close"
-                                            aria-label="Close"></button>
+                                            aria-label="Close"><img src="/catalog/view/theme/theme/images/close-alt.png" alt="иконка"></button>
                                     <div>
-                                        <h2 id="ratingModalTitle"><?php echo $send_rating; ?></h2>
+                                        <h2 id="ratingModalTitle">Ваш отзыв</h2>
                                         <div id="ratingModalDesc">
-                                            <div class="grid grid-2">
-                                                <div class="col">
+                                            <div class="form-row row ">
+                                                <div class="row-item col-lg-6 col-md-12">
                                                     <label class="rating-form-label"
                                                            for="input-name"><?php echo $entry_name; ?></label>
                                                     <div class="">
@@ -219,8 +219,6 @@
                                                             <div class="text-danger"><?php echo $error_name; ?></div>
                                                         <?php } ?>
                                                     </div>
-                                                </div>
-                                                <div class="col">
                                                     <label class="rating-form-label"
                                                            for="input-email"><?php echo $entry_email; ?></label>
                                                     <div class="">
@@ -231,11 +229,29 @@
                                                         <?php } ?>
                                                         <div class="field_desc"><?php echo $text_email_desc; ?></div>
                                                     </div>
-                                                </div>
-                                                <div style="clear: both"></div>
+                                                    <div class="policy-block">
+                                                        Нажимая на кнопку, Вы подтверждаете<br>
+                                                        свое согласие на обработку <a href="/policy">персональных данных</a>
+                                                    </div>
+                                                    <button type="submit"
+                                                            class="remodal-confirm add_rating-button"><?php echo $button_submit; ?></button>
 
+                                                </div>
+                                                <div class="row-item col-lg-6 col-md-12">
+                                                    <label class=" control-label"
+                                                           for="input-comment"><?php echo $entry_comment; ?></label>
+                                                    <div class="">
+                                                    <textarea name="comment" rows="6" id="input-comment"
+                                                              class="form-control" required
+                                                              style="height: 100px"><?php echo $comment; ?></textarea>
+                                                        <?php if ($error_comment) { ?>
+                                                            <div class="text-danger"><?php echo $error_comment; ?></div>
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="rate_separator"></div>
+
+
                                             <div class="grid grid-2">
                                                 <?php if (!$form_custom_types) { ?>
                                                     <?php if (isset($shop_rating_shop_rating)) { ?>
@@ -334,22 +350,8 @@
                                                     </div>
                                                 <?php } ?>
                                             </div>
-                                            <div style="clear: both"></div>
-                                            <div class="rate_separator"></div>
-                                            <div class="grid" style="margin-bottom: 20px">
-                                                <div class="col">
-                                                    <label class=" control-label"
-                                                           for="input-comment"><?php echo $entry_comment; ?></label>
-                                                    <div class="">
-                                                    <textarea name="comment" rows="6" id="input-comment"
-                                                              class="form-control" required
-                                                              style="height: 100px"><?php echo $comment; ?></textarea>
-                                                        <?php if ($error_comment) { ?>
-                                                            <div class="text-danger"><?php echo $error_comment; ?></div>
-                                                        <?php } ?>
-                                                    </div>
-                                                </div>
-                                                <div style="clear: both"></div>
+                                            <div class="grid"  >
+
                                             </div>
                                             <?php if (isset($shop_rating_good_bad)) { ?>
                                                 <div class="grid grid-2">
@@ -385,11 +387,6 @@
 
                                         </div>
                                     </div>
-                                    <br>
-                                    <button type="submit"
-                                            class="remodal-confirm add_rating-button"><?php echo $button_submit; ?></button>
-                                    <button data-remodal-action="cancel"
-                                            class="remodal-cancel"><?php echo $button_close; ?></button>
                                 </form>
                             </div>
                         <?php } ?>

@@ -92,7 +92,7 @@
                 <div class="mobile-search">
                     <?php echo $search; ?>
                 </div>
-                <div  class="last">
+                <div class="last">
                     <a href="tel:+7 (904)370-40-45" class="d-flex align-items-center  justify-content-center">
                         <img src="/catalog/view/theme/theme/images/main/phone-icon.png" alt="Иконка"/>
                         <p>
@@ -210,14 +210,29 @@
                 </div>
             </div>
         </div>
+
         <div class="bottom-header ">
             <div class="container">
                 <div class="row">
-                    <div class="first  col-md-2  d-flex align-items-center">
-                        <p>
-                            Каталог
-                        </p>
-                        <img src="/catalog/view/theme/theme/images/main/bar.png" alt="Иконка"/>
+                    <div class="first position-relative  col-md-2  d-flex align-items-center">
+                        <div class="catalog-hover-menu">
+                            <a href="#" class="show-cat-link d-flex align-items-center">
+                                <p>
+                                    Каталог
+                                </p>
+                                <img src="/catalog/view/theme/theme/images/main/bar.png" alt="Иконка"/>
+                            </a>
+
+                            <ul class="catalog-menu">
+                                <?php foreach ($categories as $sub_cat): ?>
+                                    <li class="item">
+                                        <a href="<?php echo $sub_cat['href']; ?>">
+                                            <?php echo $sub_cat['name']; ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                     <div class="second col-md-10">
                         <?php if (!empty($categories)) { ?>

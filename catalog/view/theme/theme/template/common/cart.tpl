@@ -12,8 +12,8 @@
                     Корзина:
                 </h3>
                 <span class="price">
-                <?php echo $price_items; ?>
-            </span>
+                <?php echo $price_items; ?>р
+                </span>
             </div>
         </div>
     </button>

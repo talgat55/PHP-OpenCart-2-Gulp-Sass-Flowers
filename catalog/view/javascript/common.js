@@ -162,7 +162,7 @@ var cart = {
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
 						$('#cart > button #cart-total').html(json['total'].price);
-						$('#cart > button .second .price').html(json['total'].count);
+						$('#cart > button .second .price').html(json['total'].count + 'р');
 					}, 100);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -190,7 +190,8 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                    $('#cart > button #cart-total').html(json['total'].price);
+                    $('#cart > button .second .price').html(json['total'].count + 'р');
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -219,7 +220,8 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                    $('#cart > button #cart-total').html(json['total'].price);
+                    $('#cart > button .second .price').html(json['total'].count + 'р');
 				}, 100);
 				
 				var now_location = String(document.location.pathname);

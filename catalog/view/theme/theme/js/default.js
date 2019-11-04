@@ -297,7 +297,7 @@ function reviewShowBlock() {
 function modalAction() {
     "use strict";
 
-    jQuery('#create-order-link a').click(function (e) {
+    jQuery('#create-order-link a, .information-information-8 .link-order').click(function (e) {
         e.preventDefault();
 
         jQuery('#custom-modal, #overlay-layer').addClass('active-element');
@@ -347,9 +347,7 @@ function  checkActiveCats(tempCat){
 function ajaxProduct(cat = '', price = '') {
     var pathname = window.location.pathname;
     jQuery.get(pathname + cat + price, function (data) {
-
         var products = jQuery(data).find('.product-layout .product-item ');
-
         jQuery('.product-layout.product-list.row').html(' ').append(products);
     });
 }
