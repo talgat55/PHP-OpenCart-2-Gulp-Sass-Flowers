@@ -44,7 +44,7 @@
 
     <script src="catalog/view/theme/theme/js/slick.min.js" type="text/javascript"></script>
     <script src="catalog/view/theme/theme/js/jquery.mask.min.js" type="text/javascript"></script>
-
+    <script src="catalog/view/theme/theme/js/jquery.query-object.js" type="text/javascript"></script>
     <script src="catalog/view/theme/theme/js/default.js" type="text/javascript"></script>
     <?php foreach ($links as $link) { ?>
         <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>"/>

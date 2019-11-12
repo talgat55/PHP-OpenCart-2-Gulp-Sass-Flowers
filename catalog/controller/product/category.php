@@ -222,6 +222,8 @@ class ControllerProductCategory extends Controller
 
             $minPrice = $this->model_catalog_product->minPriceProducts();
             $maxPrice = $this->model_catalog_product->maxPriceProducts();
+
+
             $data['minPrice'] = intval($minPrice);
             $data['maxPrice'] = intval($maxPrice);
 
@@ -230,7 +232,10 @@ class ControllerProductCategory extends Controller
 
             if (isset($this->request->get['categories_custom'])) {
                 if (!empty($this->request->get['categories_custom'])) {
-                    $tempC = substr($this->request->get['categories_custom'], 1);
+                     // delete undefined
+                    $redyStr = str_replace('undefined', '', $this->request->get['categories_custom']);
+
+                    $tempC = substr($redyStr, 1);
                     $filter_cat = ['categories' => $tempC];
                 } else {
                     $filter_cat = '';

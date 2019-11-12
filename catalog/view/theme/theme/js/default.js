@@ -145,10 +145,26 @@ function activeElementByClick() {
         } else {
             jQuery(this).parent().parent().removeClass('active');
         }
+        checkActiveInputsCats();
+    });
+}
+
+/**
+ *  Check active inputs in block filter on home page
+ */
+function checkActiveInputsCats() {
+    "use strict";
+    var tempCat;
+    jQuery(".filter-block .first input").each(function (index) {
+        if (jQuery(this).prop("checked") === true) {
+            tempCat = tempCat + ',' + jQuery(this).val();
+        }
 
     });
-
-
+    var newerQuery = jQuery.query.SET('categories_custom', tempCat);
+    var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + newerQuery;
+    window.history.pushState({path: newurl}, '', newurl);
+    ajaxProduct('home');
 }
 
 //
@@ -157,21 +173,31 @@ function activeElementByClick() {
 function priceSlider() {
     "use strict";
     var sliderId = jQuery('#slider');
+
+    var classAjax;
+    var minValue = sliderId.attr('data-min');
+    var maxValue = sliderId.attr('data-max');
+
     if (sliderId.length) {
         sliderId.slider({
-
             range: true,
-            min: 1000,
-            max: 12000,
+            min: 0,
+            max: 0,
             step: 1,
             change: function (event, ui) {
-                    console.log(ui.values[0]);
-                    console.log(ui.values[1]);
-                var tempCat = '?categories_custom=';
+                console.log(ui.values[0]);
+                console.log(ui.values[1]);
                 jQuery(this).toggleClass('active');
-                checkActiveCats(tempCat);
+                var newerQuery = jQuery.query.SET('min_price_custom', ui.values[0]).SET('max_price_custom', ui.values[1]);
+                var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + newerQuery;
+                window.history.pushState({path: newurl}, '', newurl);
 
-                ajaxProduct('', '?min_price_custom='+ui.values[0] +'&max_price_custom='+ui.values[1]);
+                if (jQuery('body').hasClass('common-home')) {
+                    classAjax = 'home';
+                } else {
+                    classAjax = '';
+                }
+                ajaxProduct(classAjax);
 
             }
         })
@@ -185,6 +211,9 @@ function priceSlider() {
                 suffix: " р"
 
             });
+
+        sliderId.slider("option", "min", parseInt(minValue));
+        sliderId.slider("option", "max", parseInt(maxValue));
     }
 }
 
@@ -315,27 +344,52 @@ function modalAction() {
 function filterOnPageProducts() {
     "use strict";
     var mainWrapBlock = '.filter-page-wrapper';
-    jQuery("body").on("click", mainWrapBlock + " .lists-cats  a", function (e) {
+    var bodyClass = jQuery("body");
+    bodyClass.on("click", mainWrapBlock + " .lists-cats  a", function (e) {
         e.preventDefault();
-        var tempCat = '?categories_custom=';
+
         jQuery(this).toggleClass('active');
-        checkActiveCats(tempCat);
+        checkActiveCats();
+    });
+
+
+    bodyClass.on("click", " .clear-filter", function (e) {
+        e.preventDefault();
+        var classAjax;
+        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.history.pushState({path: newurl}, '', newurl);
+
+        jQuery(".filter-block .first input").each(function (index) {
+            jQuery(this).prop("checked", false);
+            jQuery(this).parent().parent().removeClass('active');
+        });
+        if (jQuery('body').hasClass('common-home')) {
+            classAjax = 'home';
+        } else {
+            classAjax = '';
+        }
+        ajaxProduct(classAjax);
     });
 }
+
 
 /**
  * Return list active categories filters
  *
  * @param tempCat
  */
-function  checkActiveCats(tempCat){
+function checkActiveCats() {
+    var tempCat;
     jQuery(".lists-cats li").each(function (index) {
         if (jQuery(this).find('a').hasClass('active')) {
             tempCat = tempCat + ',' + jQuery(this).find('a').attr('data-id');
         }
     });
     console.log(tempCat);
-    ajaxProduct(tempCat);
+    var newerQuery = jQuery.query.SET('categories_custom', tempCat);
+    var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + newerQuery;
+    window.history.pushState({path: newurl}, '', newurl);
+    ajaxProduct();
 }
 
 /**
@@ -344,23 +398,46 @@ function  checkActiveCats(tempCat){
  * @param cat
  * @param price
  */
-function ajaxProduct(cat = '', price = '') {
-    var pathname = window.location.pathname;
-    jQuery.get(pathname + cat + price, function (data) {
-        var products = jQuery(data).find('.product-layout .product-item ');
-        jQuery('.product-layout.product-list.row').html(' ').append(products);
+function ajaxProduct(page = null) {
+
+    var pathname = window.location.href;
+    console.log(pathname);
+
+    jQuery('.wrapper-product-list ').addClass('active');
+    jQuery.get(pathname, function (data) {
+        jQuery('.wrapper-product-list ').removeClass('active');
+        if (page === 'home') {
+            var products = jQuery(data).find('.product-layout.product-list.product-list-filtered .product-item ');
+
+            if (products.length == '0') {
+                products = '<p style="line-height: 100px">Товаров по запросу не найдено</p>';
+            }
+            jQuery('.product-list-filtered').html(' ').append(products);
+
+
+        } else {
+            var products = jQuery(data).find('.product-layout .product-item ');
+
+            if (products.length == '0') {
+                products = '<p style="line-height: 100px">Товаров по запросу не найдено</p>';
+            }
+            jQuery('.product-layout.product-list.row').html(' ').append(products);
+
+        }
+
     });
 }
 
 /**
  * Hide block alert after add item in cart
  */
-function closeAlertModal(){
+function closeAlertModal() {
     "use strict";
-    jQuery('body').on('click', '.alert .close', function() {
+    jQuery('body').on('click', '.alert .close', function () {
         jQuery('.alert').css('display', 'none');
     });
 }
+
 //----------------------------------
 //   Mobile Menu
 //------------------------------------
@@ -375,3 +452,18 @@ function mobileMenu() {
         return false;
     });
 }
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};

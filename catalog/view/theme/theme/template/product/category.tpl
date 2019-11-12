@@ -64,7 +64,7 @@
                 <div class="row filter-block  ">
                     <div class="col-lg-4"></div>
                     <div class="second col-lg-4 col-md-12">
-                        <div id="slider" min="<?php echo $minPrice; ?>" max="<?php echo $maxPrice; ?>">
+                        <div id="slider" data-min="<?php echo $minPrice; ?>" data-max="<?php echo $maxPrice; ?>">
                             <div id="custom-handle" class="ui-slider-handle">
                                 <div class="float-value"></div>
                             </div>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div id="clear-filter" class="text-right m-0">
-                            <a href="#">
+                            <a href="#" class="clear-filter">
                                 <img src="/catalog/view/theme/theme/images/main/close.png" alt="иконка">
                                 <span>
                                   Сбросить фильтр
@@ -94,58 +94,60 @@
             <?php if ($products) { ?>
 
                 <div class="row w-100">
-                    <ul class="product-layout product-list row  w-100">
-                        <?php foreach ($products as $product) { ?>
-                            <li class=" product-item  col-lg-3 col-md-6  col-xs-12">
-                                <div class="product-thumb">
-                                    <div class="image position-relative">
-                                        <button class="add-wishlist" type="button" data-toggle="tooltip"
-                                                title="<?php echo $button_wishlist; ?>"
-                                                onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
-                                                    class="fa fa-heart"></i>
-                                        </button>
-                                        <a href="<?php echo $product['href']; ?>">
-                                            <img src="<?php echo $product['thumb']; ?>"
-                                                 alt="<?php echo $product['name']; ?>"
-                                                 title="<?php echo $product['name']; ?>" class="img-responsive"/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <div class="caption">
-                                            <h3>
-                                                <a href="<?php echo $product['href']; ?>">
-                                                    <?php echo $product['name']; ?>
-                                                </a>
-                                            </h3>
-                                            <div class="d-flex align-items-center justify-content-between">
-                                                <?php if ($product['price']) { ?>
-                                                    <p class="price">
-                                                        <?php if (!$product['special']) { ?>
-                                                            <?php echo $product['price']; ?>
-                                                        <?php } else { ?>
-                                                            <span class="price-new"><?php echo $product['special']; ?></span>
-                                                            <span
-                                                                    class="price-old"><?php echo $product['price']; ?></span>
-                                                        <?php } ?>
-                                                        <?php if ($product['tax']) { ?>
-                                                            <span class="price-tax"><?php echo $text_tax; ?><?php echo $product['tax']; ?></span>
-                                                        <?php } ?>
-                                                    </p>
-                                                <?php } ?>
-                                                <button class="add-to-cart" type="button"
-                                                        onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-                                                    Заказать
-                                                </button>
+                    <div class="wrapper-product-list w-100">
+                        <ul class="product-layout product-list row  w-100">
+                            <?php foreach ($products as $product) { ?>
+                                <li class=" product-item  col-lg-3 col-md-6  col-xs-12">
+                                    <div class="product-thumb">
+                                        <div class="image position-relative">
+                                            <button class="add-wishlist" type="button" data-toggle="tooltip"
+                                                    title="<?php echo $button_wishlist; ?>"
+                                                    onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
+                                                        class="fa fa-heart"></i>
+                                            </button>
+                                            <a href="<?php echo $product['href']; ?>">
+                                                <img src="<?php echo $product['thumb']; ?>"
+                                                     alt="<?php echo $product['name']; ?>"
+                                                     title="<?php echo $product['name']; ?>" class="img-responsive"/>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <div class="caption">
+                                                <h3>
+                                                    <a href="<?php echo $product['href']; ?>">
+                                                        <?php echo $product['name']; ?>
+                                                    </a>
+                                                </h3>
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <?php if ($product['price']) { ?>
+                                                        <p class="price">
+                                                            <?php if (!$product['special']) { ?>
+                                                                <?php echo $product['price']; ?>
+                                                            <?php } else { ?>
+                                                                <span class="price-new"><?php echo $product['special']; ?></span>
+                                                                <span
+                                                                        class="price-old"><?php echo $product['price']; ?></span>
+                                                            <?php } ?>
+                                                            <?php if ($product['tax']) { ?>
+                                                                <span class="price-tax"><?php echo $text_tax; ?><?php echo $product['tax']; ?></span>
+                                                            <?php } ?>
+                                                        </p>
+                                                    <?php } ?>
+                                                    <button class="add-to-cart" type="button"
+                                                            onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                                                        Заказать
+                                                    </button>
+
+                                                </div>
+
 
                                             </div>
-
-
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                        <?php } ?>
-                    </ul>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
                 </div>
                 <div class="row justify-content-center mb-4">
                     <?php echo $pagination; ?>

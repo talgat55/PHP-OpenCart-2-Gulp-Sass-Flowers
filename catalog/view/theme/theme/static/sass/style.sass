@@ -479,6 +479,23 @@ header
 //
 // Product
 //
+
+.wrapper-product-list
+  position: relative
+
+  &.active
+    &::before
+      content: "Загрузка"
+      display: block
+      position: absolute
+      top: 30px
+      font-size: 20px
+      color: #000
+      left: 50%
+      transform: translateX(-50%)
+    .product-layout
+      opacity: .1
+
 .product-search,
 .wishlist-page,
 .products-filter-list-section,
