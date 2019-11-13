@@ -15,6 +15,7 @@ jQuery(document).ready(function () {
     modalAction();
     filterOnPageProducts();
     mobileMenu();
+    toggleFilterMenu();
     //  mask input
 
     if (jQuery('#sobInput33-2').length) {
@@ -467,3 +468,22 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+//----------------------------------
+//   Toggle Filter block
+//------------------------------------
+function toggleFilterMenu() {
+    "use strict";
+
+    var clickClass = '.heading-filter-block-mobile';
+    var bodyClass = 'body';
+
+    jQuery(bodyClass).on('click', clickClass, function () {
+        jQuery(clickClass).toggleClass('is-active');
+        jQuery('.filter-block, .product-page.page-cat .filter-page-wrapper').toggleClass('is-active');
+        return false;
+    });
+
+}
+
+

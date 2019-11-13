@@ -93,13 +93,13 @@
                     <?php echo $search; ?>
                 </div>
                 <div class="last">
-                    <a href="tel:+7 (904)370-40-45" class="d-flex align-items-center  justify-content-center">
+                    <a href="tel:+7 (904)370-40-45" class="d-flex align-items-center  justify-content-start">
                         <img src="/catalog/view/theme/theme/images/main/phone-icon.png" alt="Иконка"/>
                         <p>
                             +7 (904)370-40-45
                         </p>
                     </a>
-                    <a href="/wishlist/" class="wish-block d-flex  align-items-center justify-content-center">
+                    <a href="/wishlist/" class="wish-block d-flex  align-items-center justify-content-start">
                         <i class="fas fa-heart"></i>
                         <div class="d-flex">
                             <p>

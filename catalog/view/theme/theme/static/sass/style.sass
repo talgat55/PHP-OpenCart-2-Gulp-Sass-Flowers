@@ -479,6 +479,28 @@ header
 //
 // Product
 //
+.heading-filter-block-mobile
+  background: #eee
+  display: none!important
+  padding: 14px 6px
+  margin-bottom: 20px
+  cursor: pointer
+  &.is-active
+    background-color: $main_color
+    i
+      color: #fff
+
+    h3
+      color: #fff
+
+  i
+    padding-right: 10px
+
+  h3
+    font-size: 20px
+    margin: 0
+
+
 
 .wrapper-product-list
   position: relative
@@ -879,6 +901,8 @@ header
     margin-left: -5px
 
   .filter-block
+    &.is-active
+      display: block!important
     .price-between
       padding-top: 20px
       margin-left: -10px
@@ -992,7 +1016,8 @@ header
 [class^="product-category"] .filter-block
   margin-bottom: 50px
 
-
+.product-page.page-cat .filter-page-wrapper.is-active
+  display: block!important
 
 //
 //  Page Collaboration
@@ -2066,6 +2091,7 @@ footer
     margin-bottom: 30px
 
   .mobile-navigation
+    text-align: left
     margin-bottom: 20px
 
     ul
@@ -2093,11 +2119,12 @@ footer
         color: #000
         font-size: 15px
         margin-bottom: 30px
-
+        &:last-child
+          margin-bottom: 0!important
 
 #mobile-toggle
   position: fixed
-  bottom: 75px
+  top: 75px
   display: none
   right: 20px
   transition: all .6s
@@ -2286,6 +2313,28 @@ footer
 
 
 @media (max-width: 993px)
+  .contact-page-section
+    .vk-row
+      margin-top: 20px
+  .product-page
+    .categories-block
+      .lists-cats li
+        display: inline-block
+        margin-bottom: 10px
+
+        a
+          white-space: nowrap
+    &.page-cat
+      .filter-block
+        .second
+          height: 80px
+
+  .heading-filter-block-mobile
+    display: flex!important
+  .product-page.page-cat .filter-page-wrapper,
+  .filter-block
+    display: none
+
   #mobile-toggle
     display: block!important
   header
@@ -2412,7 +2461,17 @@ footer
 
 
 @media (max-width: 600px)
+  header
+    .center-header
+      #cart
+        position: relative
+        right: 20px
+
   .information-information-7
     .list-steps
       width: 100%
 
+  .home-banner
+    background-position: -169px!important
+    .content
+      padding: 0 20px

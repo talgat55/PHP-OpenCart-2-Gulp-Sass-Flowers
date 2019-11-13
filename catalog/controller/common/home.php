@@ -14,11 +14,12 @@ class ControllerCommonHome extends Controller
         // yandex map
         $this->document->addScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU');
 
-        $this->document->addScript('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js');
+        $this->document->addScript('/catalog/view/theme/theme/js/jquery-ui.min.js');
         $this->document->addScript('https://rawgit.com/simeydotme/jQuery-ui-Slider-Pips/master/src/js/jquery-ui-slider-pips.js');
+        $this->document->addScript('/catalog/view/theme/theme/js/jquery.ui.touch-punch.min.js');
 //
-        $this->document->addStyle('https://simeydotme.github.io/jQuery-ui-Slider-Pips/dist/css/jqueryui.min.css');
-        $this->document->addStyle('https://rawgit.com/simeydotme/jQuery-ui-Slider-Pips/master/dist/jquery-ui-slider-pips.css');
+        $this->document->addStyle('/catalog/view/theme/theme/css/jqueryui.min.css');
+        $this->document->addStyle('/catalog/view/theme/theme/css/jquery-ui-slider-pips.css');
         if (isset($this->request->get['route'])) {
             $this->document->addLink($this->config->get('config_url'), 'canonical');
         }
@@ -37,6 +38,8 @@ class ControllerCommonHome extends Controller
 
         $bannerOne = $this->model_design_banner->getBanner('6');
         $bannerTwo = $this->model_design_banner->getBanner('8');
+
+
 
         if ($this->request->server['HTTPS']) {
             $image_path = $this->config->get('config_ssl') . 'image/';

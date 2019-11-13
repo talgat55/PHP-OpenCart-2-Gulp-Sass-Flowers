@@ -13,8 +13,10 @@ class ControllerProductCategory extends Controller
         $this->load->model('tool/image');
         // load banner
         $this->load->model('design/banner');
+
         $this->document->addScript('/catalog/view/theme/theme/js/jquery-ui.min.js');
         $this->document->addScript('/catalog/view/theme/theme/js/jquery-ui-slider-pips.js');
+        $this->document->addScript('/catalog/view/theme/theme/js/jquery.ui.touch-punch.min.js');
 //
         $this->document->addStyle('/catalog/view/theme/theme/css/jqueryui.min.css');
         $this->document->addStyle('/catalog/view/theme/theme/css/jquery-ui-slider-pips.css');

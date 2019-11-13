@@ -33,6 +33,12 @@
                             <h2 class="w-100 sub-title">
                                 Подобрать букет
                             </h2>
+                            <div class="heading-filter-block-mobile align-items-center  justify-content-center">
+
+                                    <i class="fas fa-filter"></i>
+                                    <h3>Фильтр</h3>
+
+                            </div>
                             <div class="filter-block">
                                 <form>
                                     <div class="row">
@@ -144,12 +150,12 @@
                 <div class="container product-page  center">
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
-                            <a class="link-banner" href="<?php echo $bannerone['href']; ?>">
+                            <a class="link-banner" href="<?php echo $bannerone['link']; ?>">
                                 <img src="<?php echo $bannerone['url']; ?>" alt="Баннер"/>
                             </a>
                         </div>
                         <div class="col-md-6 col-xs-12">
-                            <a class="link-banner" href="<?php echo $bannertwo['href']; ?>">
+                            <a class="link-banner" href="<?php echo $bannertwo['link']; ?>">
                                 <img src="<?php echo $bannertwo['url']; ?>" alt="Баннер"/>
                             </a>
                         </div>
@@ -221,7 +227,7 @@
                                 <?php } ?>
                             </ul>
                             <div class="bottom__link-all w-100 d-md-flex  justify-content-center">
-                                <a href="#" class="link__alt">
+                                <a href="/prefabricated_bouquets/" class="link__alt">
                                     Перейти в каталог
                                 </a>
                             </div>
@@ -293,7 +299,7 @@
 
                             </div>
                             <div class="bottom__link-all w-100 d-md-flex  justify-content-center">
-                                <a href="#" class="link__alt">
+                                <a href="/prefabricated_bouquets/" class="link__alt">
                                     Перейти в каталог
                                 </a>
                             </div>
@@ -365,7 +371,7 @@
                                 <?php } ?>
                             </ul>
                             <div class="bottom__link-all w-100 d-md-flex  justify-content-center">
-                                <a href="#" class="link__alt">
+                                <a href="/prefabricated_bouquets/" class="link__alt">
                                     Перейти в каталог
                                 </a>
                             </div>
@@ -463,7 +469,7 @@
 
                             </div>
                             <div class="bottom__link-all w-100 d-md-flex  justify-content-center">
-                                <a href="#" class="link__alt">
+                                <a href="/prefabricated_bouquets/" class="link__alt">
                                     Перейти в каталог
                                 </a>
                             </div>

@@ -263,7 +263,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-xs-12">
+                                        <div class="vk-row  col-lg-6 col-xs-12">
                                             <div class="info-block d-flex  align-items-center">
                                                 <div class="image-block">
                                                     <img class="main" src="/catalog/view/theme/theme/images/main/vk.png"
@@ -453,7 +453,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-lg-6 col-xs-12">
+                                                    <div class="vk-row col-lg-6 col-xs-12">
                                                         <div class="info-block d-flex  align-items-center">
                                                             <div class="image-block">
                                                                 <img class="main"

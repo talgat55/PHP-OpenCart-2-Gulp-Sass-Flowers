@@ -117,9 +117,6 @@ class ControllerCommonHeader extends Controller {
                        'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
                    );
                }
-
-
-
             }
         }
 
@@ -127,15 +124,12 @@ class ControllerCommonHeader extends Controller {
 			if ($category['top']) {
 				// Level 2
 				$children_data = array();
-
 				$children = $this->model_catalog_category->getCategories($category['category_id']);
-
 				foreach ($children as $child) {
 					$filter_data = array(
 						'filter_category_id'  => $child['category_id'],
 						'filter_sub_category' => true
 					);
-
 					$children_data[] = array(
 						'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
 						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
