@@ -1,8 +1,8 @@
-<?php echo $header; ?>
-<?php echo $column_left ?>
+<?php echo $header ?>
 <script>
   var simple = {
     version: '<?php echo $version ?>',
+    versionHash: '<?php echo $version_hash ?>',
     adminEmail: '<?php echo $admin_email ?>',
     opencartVersion: '<?php echo $opencart_version ?>',
     token: '<?php echo $token ?>',

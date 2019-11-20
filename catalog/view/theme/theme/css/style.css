@@ -203,8 +203,13 @@ header {
           color: #ef4334; }
     header .center-header #cart {
       position: relative; }
+      header .center-header #cart:hover {
+        text-decoration: none;
+        opacity: .6; }
       header .center-header #cart .dropdown-toggle::after {
         display: none; }
+      header .center-header #cart .cart-link {
+        margin: 0 0 0 auto; }
       header .center-header #cart button {
         padding: 0;
         margin-bottom: 10px; }
@@ -2142,6 +2147,33 @@ footer {
 .hamburger--3dx.is-active .hamburger-inner::after {
   -webkit-transform: translate3d(0, -10px, 0) rotate(-45deg);
           transform: translate3d(0, -10px, 0) rotate(-45deg); }
+
+.refresh-cart {
+  border-radius: 0;
+  background-color: #07b9d3 !important;
+  border: none;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .refresh-cart i {
+    color: #fff; }
+  .refresh-cart:hover {
+    opacity: 0.5 !important; }
+
+.delete-cart {
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .delete-cart:hover {
+    opacity: .5; }
+
+.checkout-cart .text-left a {
+  color: #07b9d3; }
+
+.checkout-cart .quantity {
+  width: 50px;
+  margin-right: 5px;
+  text-align: center; }
 
 .alert-success {
   margin: 0 !important;

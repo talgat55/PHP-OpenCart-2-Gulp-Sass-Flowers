@@ -141,12 +141,12 @@
 <div class="container product-page  center">
     <div class="row">
         <div class="col-md-6 col-xs-12">
-            <a class="link-banner" href="<?php echo $bannerone['href']; ?>">
+            <a class="link-banner" href="<?php echo $bannerone['link']; ?>">
                 <img src="<?php echo $bannerone['url']; ?>" alt="Баннер"/>
             </a>
         </div>
         <div class="col-md-6 col-xs-12">
-            <a class="link-banner" href="<?php echo $bannertwo['href']; ?>">
+            <a class="link-banner" href="<?php echo $bannertwo['link']; ?>">
                 <img src="<?php echo $bannertwo['url']; ?>" alt="Баннер"/>
             </a>
         </div>

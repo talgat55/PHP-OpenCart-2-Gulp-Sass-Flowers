@@ -220,7 +220,7 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-                    $('#cart > button #cart-total').html(json['total'].price);
+                    // $('#cart > button #cart-total').html(json['total'].price);
                     $('#cart > button .second .price').html(json['total'].count + 'р');
 				}, 100);
 				

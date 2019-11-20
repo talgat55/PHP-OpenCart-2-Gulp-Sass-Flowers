@@ -35,7 +35,7 @@
                                         </h3>
                                         <p>
                                             Перейдите в корзину и нажмите кнопку<br>
-                                            <a href="/ckeckout">Оформить заказ</a>
+                                            <a href="/simplecheckout/">Оформить заказ</a>
                                         </p>
                                     </div>
                                 </li>
@@ -49,7 +49,7 @@
                                         </h3>
                                         <p>
                                             Заполните всю необходимую информацию,
-                                            выберите способ <a class="b-b" href="#">доставки</a>
+                                            выберите способ <a class="b-b" href="/delivery">доставки</a>
                                         </p>
                                     </div>
                                 </li>
@@ -85,7 +85,7 @@
                             </ul>
 
                             <div class="w-100  mb-4">
-                                <a href="#" class="link-order">
+                                <a href="/" class="link-order">
                                     перейти к покупкам
                                 </a>
                             </div>

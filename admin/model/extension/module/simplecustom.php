@@ -2,7 +2,6 @@
 /*
 @author Dmitriy Kubarev
 @link   http://www.simpleopencart.com
-@link   http://www.opencart.com/index.php?route=extension/extension/info&extension_id=4811
 */
 
 class ModelModuleSimpleCustom extends Model {
@@ -232,11 +231,14 @@ class ModelModuleSimpleCustom extends Model {
 
             foreach ($query->row as $key => $value) {
                 if (isset($result[$key])) {
-                    if ($result[$key]['type'] != 'checkbox') {
-                        $result[$key]['value'] = $value;
-                    } else {
+                    if ($result[$key]['type'] == 'checkbox') {
                         $result[$key]['value'] = explode(',', $value);
-                    }
+                    } elseif ($result[$key]['type'] == 'file') {
+                        $result[$key]['value'] = $value;
+                        $result[$key]['filename'] = utf8_substr($value, 0, utf8_strrpos($value, '.'));
+                    } else {
+                        $result[$key]['value'] = $value;
+                    } 
                 }
             };
 
@@ -244,7 +246,7 @@ class ModelModuleSimpleCustom extends Model {
                 $metadata = explode(',', $query->row['metadata']);
 
                 foreach ($result as $key => $info) {
-                    if (!in_array($key, $metadata)) {
+                    if (!in_array($key, $metadata) && empty($result[$key]['value'])) {
                         unset($result[$key]);
                     }
                 }
@@ -390,6 +392,8 @@ class ModelModuleSimpleCustom extends Model {
 
                         $value = implode(', ', $value);
                     }
+                } elseif ($fields[$id]['type'] == 'file') {
+                    $value = utf8_substr($value, 0, utf8_strrpos($value, '.'));
                 }
 
                 $result[$id] = $value;
@@ -415,8 +419,10 @@ class ModelModuleSimpleCustom extends Model {
 
         $ret = array();
 
-        foreach ($result as $info) {
-            $ret[$info->id] = $info->text;
+        if (!empty($result) && is_array($result)) {
+            foreach ($result as $info) {
+                $ret[$info->id] = $info->text;
+            }
         }
 
         return $ret;

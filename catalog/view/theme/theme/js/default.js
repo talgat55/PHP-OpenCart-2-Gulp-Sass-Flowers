@@ -18,8 +18,8 @@ jQuery(document).ready(function () {
     toggleFilterMenu();
     //  mask input
 
-    if (jQuery('#sobInput33-2').length) {
-        jQuery('#sobInput33-2').mask('+0(000) 000-0000');
+    if (jQuery('#sobInput33-2, #customer_telephone').length) {
+        jQuery('#sobInput33-2, #customer_telephone').mask('+0(000) 000-0000');
     }
 
     // end redy function

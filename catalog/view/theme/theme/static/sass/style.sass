@@ -206,9 +206,15 @@ header
 
     #cart
       position: relative
+      &:hover
+        text-decoration: none
+        opacity: .6
 
       .dropdown-toggle::after
         display: none
+
+      .cart-link
+        margin: 0 0 0 auto
 
       button
         padding: 0
@@ -2206,12 +2212,8 @@ footer
 .hamburger:hover
   opacity: 0.7
 
-
 .hamburger.is-active:hover
   opacity: 0.7
-
-
-
 
 .hamburger-inner, .hamburger-inner::after,
 .hamburger-inner::before
@@ -2240,6 +2242,36 @@ footer
 
 
 
+.refresh-cart
+  border-radius: 0
+  background-color: $alt_color!important
+  border: none
+  transition: all .3s
+  i
+    color: #fff
+
+  &:hover
+    opacity: .5!important
+
+.delete-cart
+  transition: all .3s
+  &:hover
+    opacity: .5
+
+
+//
+// Cart
+//
+
+.checkout-cart
+  .text-left
+    a
+      color: #07b9d3
+
+  .quantity
+    width: 50px
+    margin-right: 5px
+    text-align: center
 
 .alert-success
   margin: 0!important

@@ -6,7 +6,7 @@ class ModelModuleSimple extends Model {
         $change = false;
 
         foreach ($query->rows as $column) {
-            if ($column['Field'] == 'value' && $column['Type'] != 'mediumtext') {
+            if ($column['Field'] == 'value' && $column['Type'] == 'text') {
                 $change = true;
             }
         }
@@ -49,9 +49,7 @@ class ModelModuleSimple extends Model {
             $result = array();
 
             foreach ($query->rows as $column) {
-                if (empty($column['Key'])) {
-                    $result[] = strtolower($column['Field']);
-                }
+                $result[] = strtolower($column['Field']);
             }
 
             if (!in_array('store_id', $result)) {
@@ -78,19 +76,25 @@ class ModelModuleSimple extends Model {
         }
     }
 
-    public function getTotalAbandonedCarts($data) {
+    public function getTotalAbandonedCarts($data = array()) {
         $query = $this->db->query("SHOW TABLES LIKE '" . DB_PREFIX . "simple_cart'");
 
         if (!$query->rows) {
             return 0;
         }
 
-        $query = $this->db->query('SELECT COUNT(*) AS count FROM `'.DB_PREFIX.'simple_cart`');
+        $sql = 'SELECT COUNT(*) AS count FROM `'.DB_PREFIX.'simple_cart`';
+
+        if (isset($data['filter_time'])) {
+            $sql .= ' WHERE date_added > FROM_UNIXTIME('.(int)$data['filter_time'].')';
+        }
+
+        $query = $this->db->query($sql);
 
         return $query->row['count'];
     }
 
-    public function getAbandonedCarts($data) {
+    public function getAbandonedCarts($data = array()) {
         $query = $this->db->query("SHOW TABLES LIKE '" . DB_PREFIX . "simple_cart'");
 
         if (!$query->rows) {
@@ -108,6 +112,10 @@ class ModelModuleSimple extends Model {
                 ON 
                     sc.customer_id = c.customer_id
                 ';
+
+        if (isset($data['filter_time'])) {
+            $sql .= ' WHERE sc.date_added > FROM_UNIXTIME('.(int)$data['filter_time'].')';
+        }
 
         $sql .= ' ORDER BY sc.date_added DESC';
 
@@ -362,12 +370,7 @@ class ModelModuleSimple extends Model {
 
                 <file path="catalog/controller/startup/startup.php">
                     <operation error="skip">
-                        <search><![CDATA[new Url]]></search>
-                        <add position="after"><![CDATA[$this->url->addRewrite(new Simple\Rewrite($this->config));]]></add>
-                    </operation>
-
-                    <operation error="skip">
-                        <search><![CDATA[newUrl]]></search>
+                        <search><![CDATA[$this->registry->set(\'url\']]></search>
                         <add position="after"><![CDATA[$this->url->addRewrite(new Simple\Rewrite($this->config));]]></add>
                     </operation>
                 </file>
@@ -397,9 +400,85 @@ class ModelModuleSimple extends Model {
     }
 
     public function deleteModifications() {
-        $this->load->model('extension/modification');
-        $modification = $this->model_extension_modification->getModificationByCode('simple url rewrite');
-        $this->model_extension_modification->deleteModification($modification['modification_id']);
+        $version = explode('.', VERSION);
+        $version = floatval($version[0].$version[1].$version[2].'.'.(isset($version[3]) ? $version[3] : 0));
+        
+        if ($version < 300) {
+            $this->load->model('extension/modification');
+
+            $modification1 = $this->model_extension_modification->getModificationByCode('simple url rewrite');
+
+            if (!empty($modification1)) {
+                $this->model_extension_modification->deleteModification($modification1['modification_id']);
+            }
+
+            $modification2 = $this->model_extension_modification->getModificationByCode('1 simple url rewrite');
+
+            if (!empty($modification2)) {
+                $this->model_extension_modification->deleteModification($modification2['modification_id']);
+            }
+        } else {
+            $this->load->model('setting/modification');
+
+            $modification1 = $this->model_setting_modification->getModificationByCode('simple url rewrite');
+
+            if (!empty($modification1)) {
+                $this->model_setting_modification->deleteModification($modification1['modification_id']);
+            }
+            
+            $modification2 = $this->model_setting_modification->getModificationByCode('1 simple url rewrite');
+
+            if (!empty($modification2)) {
+                $this->model_setting_modification->deleteModification($modification2['modification_id']);
+            }
+        } 
+        
+    }
+
+    public function getOrdersByCustomerId($customer_id) {
+        $query = $this->db->query("SELECT o.*, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS status FROM `" . DB_PREFIX . "order` o WHERE o.customer_id = '".(int)$customer_id."' AND o.order_status_id > 0 ORDER BY o.date_added DESC");
+        
+        $orders = array();
+
+        foreach ($query->rows as $order) {
+            $orders[$order['order_id']] = $order;
+        }
+
+        return $orders;
+    }
+
+    public function getOrdersByCustomerEmail($email) {
+        $query = $this->db->query("SELECT o.*, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS status FROM `" . DB_PREFIX . "order` o WHERE o.email = '".$this->db->escape($email)."' AND o.order_status_id > 0 ORDER BY o.date_added DESC");
+        
+        $orders = array();
+
+        foreach ($query->rows as $order) {
+            $orders[$order['order_id']] = $order;
+        }
+
+        return $orders;
+    }
+
+    public function getOrdersByTelephone($telephone) {
+        $query = $this->db->query("SELECT o.*, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS status FROM `" . DB_PREFIX . "order` o WHERE o.telephone = '".$this->db->escape($telephone)."' AND o.order_status_id > 0 ORDER BY o.date_added DESC");
+        
+        $orders = array();
+
+        foreach ($query->rows as $order) {
+            $orders[$order['order_id']] = $order;
+        }
+
+        return $orders;
+    }
+
+    public function setModuleStatusToTrue($store_id) {
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "setting WHERE `code` = 'simple' AND `store_id` = '" . (int) $store_id . "' AND `key` = 'module_simple_status'");
+
+        if ($query->num_rows) {
+            $this->db->query("UPDATE " . DB_PREFIX . "setting SET `value` = '1' WHERE `code` = 'simple' AND `store_id` = '" . (int) $store_id . "' AND `key` = 'module_simple_status'");
+        } else {
+            $this->db->query("INSERT INTO " . DB_PREFIX . "setting SET `value` = '1', `code` = 'simple', `store_id` = '" . (int) $store_id . "', `key` = 'module_simple_status'");
+        }
     }
 }
 
