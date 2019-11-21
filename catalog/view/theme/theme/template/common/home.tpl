@@ -19,7 +19,7 @@
                                     <?php echo $bannerfirst['title']; ?>
                                 </div>
                                 <a href="<?php echo $bannerfirst['link']; ?>" class="link ">
-                                    подарить
+                                    Перейти в каталог
                                 </a>
                             </div>
                         </div>
@@ -371,7 +371,7 @@
                                 <?php } ?>
                             </ul>
                             <div class="bottom__link-all w-100 d-md-flex  justify-content-center">
-                                <a href="/prefabricated_bouquets/" class="link__alt">
+                                <a href="/fruit_bouquets/" class="link__alt">
                                     Перейти в каталог
                                 </a>
                             </div>
@@ -397,7 +397,7 @@
                                     </div>
 
                                     <a href="<?php echo $bannermiddle['link']; ?>" class="link ">
-                                        Оформить заявку
+                                        Перейти в каталог
                                     </a>
                                 </div>
                             </div>
@@ -469,7 +469,7 @@
 
                             </div>
                             <div class="bottom__link-all w-100 d-md-flex  justify-content-center">
-                                <a href="/prefabricated_bouquets/" class="link__alt">
+                                <a href="/toys_cat/" class="link__alt">
                                     Перейти в каталог
                                 </a>
                             </div>
@@ -494,7 +494,7 @@
                                     </div>
 
                                     <a href="<?php echo $bannerbottom['link']; ?>" class="link ">
-                                        Заказать
+                                        Перейти в каталог
                                     </a>
                                 </div>
                             </div>

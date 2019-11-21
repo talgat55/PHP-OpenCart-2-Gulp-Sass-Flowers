@@ -85,7 +85,7 @@
                             </ul>
 
                             <div class="w-100  mb-4">
-                                <a href="/" class="link-order">
+                                <a href="/prefabricated_bouquets/" class="link-order">
                                     перейти к покупкам
                                 </a>
                             </div>
@@ -125,7 +125,7 @@
                             ?>
 
                             <h2 class="heading-two"> МАГАЗИН mr.buket</h2>
-                            <ul class="carousel-slider">
+                            <ul class="carousel-slider  desktop">
                                 <?php foreach ($banners as $banner_value) : ?>
                                     <li class=" item">
                                         <div class="row ">
@@ -159,7 +159,25 @@
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
-                            <div class="arrow-block d-flex justify-content-center">
+                            <ul class="carousel-slider  mobile">
+                                <?php foreach ($banners as $banner_value) : ?>
+                                    <?php
+                                    foreach ($banner_value as $key => $value) : ?>
+                                        <li class=" item">
+                                            <div class="  sub-item col-md-12">
+                                                <a class="img-bg" href="<?php echo $value['url']; ?>"
+                                                   data-lightbox="image-1"
+                                                   style="display: block;  background: url(<?php echo $value['url']; ?>); ">
+                                                    <div class="wrapper"></div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </ul>
+
+
+                            <div class="arrow-block d-flex justify-content-center  arrows-about-page">
                                 <ul class="list-arrows d-flex">
                                     <li>
                                         <a href="#" class="left">

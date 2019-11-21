@@ -1309,7 +1309,8 @@ header
   .carousel-slider
     margin: 0
     padding: 0
-
+    &.mobile
+      display: none
     li
       list-style: none
 
@@ -2083,6 +2084,7 @@ footer
 #mobile-block
   display: block
   width: 100%
+  padding: 30px
   height: 120%
   top: 0
   left: -100%
@@ -2130,7 +2132,7 @@ footer
 
 #mobile-toggle
   position: fixed
-  top: 75px
+  top: 40px
   display: none
   right: 20px
   transition: all .6s
@@ -2204,7 +2206,6 @@ footer
   margin: 0
   overflow: visible
   position: absolute
-  bottom: 75px
   right: 20px
   cursor: pointer
   z-index: 99999
@@ -2345,6 +2346,26 @@ footer
 
 
 @media (max-width: 993px)
+  .information-information-4
+    .carousel-slider
+      li .img-bg
+        margin: 0!important
+      &.desktop
+        display: none!important
+      &.mobile
+        display: block!important
+
+    .arrows-about-page
+      margin-bottom: 30px
+
+    .info-block
+      margin-bottom: 28px
+
+  .information-information-8
+    .featured-section
+      .second
+        width: auto!important
+        margin: 0 auto 25px auto!important
   .contact-page-section
     .vk-row
       margin-top: 20px

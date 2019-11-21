@@ -63,7 +63,7 @@
                                      <span class="hamburger-inner"></span>
                                  </span>
     </a>
-    <div id="mobile-block" class="d-flex align-items-center justify-content-center w-100">
+    <div id="mobile-block" class="d-flex  justify-content-center w-100">
         <div class="text-center">
             <div class="logo-mobile">
                 <?php if ($home == $og_url) { ?>
@@ -211,7 +211,6 @@
                 </div>
             </div>
         </div>
-
         <div class="bottom-header ">
             <div class="container">
                 <div class="row">
@@ -219,18 +218,22 @@
                         <div class="catalog-hover-menu">
                             <a href="#" class="show-cat-link d-flex align-items-center">
                                 <p>
-                                    Каталог
+                                    Подборки
                                 </p>
                                 <img src="/catalog/view/theme/theme/images/main/bar.png" alt="Иконка"/>
                             </a>
 
                             <ul class="catalog-menu">
                                 <?php foreach ($categories as $sub_cat): ?>
-                                    <li class="item">
-                                        <a href="<?php echo $sub_cat['href']; ?>">
-                                            <?php echo $sub_cat['name']; ?>
-                                        </a>
-                                    </li>
+                                <?php   if($sub_cat['name'] == 'Сборные букеты') : ?>
+                                    <?php  foreach ( $sub_cat['children'] as $sub_item) : ?>
+                                            <li class="item">
+                                                <a href="<?php echo $sub_item['href']; ?>">
+                                                    <?php echo $sub_item['name']; ?>
+                                                </a>
+                                            </li>
+                                    <?php  endforeach; ?>
+                                <?php  endif; ?>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
