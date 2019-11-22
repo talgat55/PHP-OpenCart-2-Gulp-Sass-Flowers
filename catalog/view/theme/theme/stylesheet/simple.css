@@ -824,3 +824,8 @@ button:focus{
     color: #fff!important;
     cursor: pointer;
 }
+
+#simplecheckout_button_cart  span{
+    color: #fff;
+    cursor: pointer;
+}
