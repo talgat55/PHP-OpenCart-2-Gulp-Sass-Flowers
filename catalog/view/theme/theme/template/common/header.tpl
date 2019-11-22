@@ -188,7 +188,7 @@
                             </p>
                         </a>
                     </div>
-                    <div class="col-2">
+                    <div class="col-4  col-md-2">
                         <div class="d-flex justify-content-end">
                             <?php echo $cart; ?>
                         </div>

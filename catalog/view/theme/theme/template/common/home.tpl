@@ -91,7 +91,7 @@
                                             <div class="product-thumb">
                                                 <div class="image position-relative">
                                                     <button class="add-wishlist" type="button" data-toggle="tooltip"
-                                                            title="<?php echo $button_wishlist; ?>"
+                                                            title="Добавить в избранное"
                                                             onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
                                                         <i
                                                                 class="fa fa-heart"></i>
@@ -176,7 +176,7 @@
                                         <div class="product-thumb">
                                             <div class="image position-relative">
                                                 <button class="add-wishlist" type="button" data-toggle="tooltip"
-                                                        title="<?php echo $button_wishlist; ?>"
+                                                        title="Добавить в избранное"
                                                         onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
                                                     <i
                                                             class="fa fa-heart"></i>
@@ -249,7 +249,7 @@
                                             <div class="product-thumb">
                                                 <div class="image position-relative">
                                                     <button class="add-wishlist" type="button" data-toggle="tooltip"
-                                                            title="<?php echo $button_wishlist; ?>"
+                                                            title="Добавить в избранное"
                                                             onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
                                                         <i
                                                                 class="fa fa-heart"></i>
@@ -320,7 +320,7 @@
                                         <div class="product-thumb">
                                             <div class="image position-relative">
                                                 <button class="add-wishlist" type="button" data-toggle="tooltip"
-                                                        title="<?php echo $button_wishlist; ?>"
+                                                        title="Добавить в избранное"
                                                         onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
                                                     <i
                                                             class="fa fa-heart"></i>
@@ -419,7 +419,7 @@
                                             <div class="product-thumb">
                                                 <div class="image position-relative">
                                                     <button class="add-wishlist" type="button" data-toggle="tooltip"
-                                                            title="<?php echo $button_wishlist; ?>"
+                                                            title="Добавить в избранное"
                                                             onclick="wishlist.add('<?php echo $product['product_id']; ?>');">
                                                         <i
                                                                 class="fa fa-heart"></i>

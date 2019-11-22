@@ -18,6 +18,12 @@ body {
   font-size: 16px;
   line-height: 1.5; }
 
+*:active,
+*:focus {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important; }
+
 div,
 span,
 h1,
@@ -2230,6 +2236,8 @@ footer {
     margin-bottom: 30px; } }
 
 @media (max-width: 993px) {
+  header .center-header #cart button {
+    margin-bottom: 0 !important; }
   .information-information-4 .carousel-slider li .img-bg {
     margin: 0 !important; }
   .information-information-4 .carousel-slider.desktop {
@@ -2267,7 +2275,6 @@ footer {
   header .search-block,
   header .phone-block,
   header .wish-block,
-  header #cart .second,
   header #top {
     display: none !important; }
   .center-header #cart button > div {

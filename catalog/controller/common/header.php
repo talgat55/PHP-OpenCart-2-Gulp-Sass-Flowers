@@ -56,8 +56,16 @@ class ControllerCommonHeader extends Controller {
 //			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
 			$data['text_wishlist'] = (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0);
 		} else {
-//			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
-			$data['text_wishlist'] =  (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0);
+            if (isset($_COOKIE["wishlistGuest"])) {
+                $cookies_wishlist = $_COOKIE["wishlistGuest"];
+            } else {
+                $cookies_wishlist = '';
+            }
+
+            $redyArr = explode(',', $cookies_wishlist);
+            $redy = array_unique($redyArr);
+
+            $data['text_wishlist'] =   isset($redy) ? count($redy)  - 1 : 0 ;
 
 
 		}

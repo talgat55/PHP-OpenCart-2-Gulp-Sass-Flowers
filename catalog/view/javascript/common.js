@@ -131,7 +131,7 @@ $(document).ready(function() {
 
 	// Makes tooltips work on ajax generated content
 	$(document).ajaxStop(function() {
-		$('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
+		// $('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
 	});
 });
 
@@ -292,8 +292,8 @@ var wishlist = {
 					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 				}
 
-				$('#wishlist-total span').html(json['total']);
-				$('#wishlist-total').attr('title', json['total']);
+				$('#favorite  .count').html(json['total']);
+				// $('#wishlist-total').attr('title', json['total']);
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 			},

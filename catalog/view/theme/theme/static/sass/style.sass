@@ -5,6 +5,12 @@ body
   font-size: 16px
   line-height: 1.5
 
+*:active,
+*:focus
+  outline: none!important
+  box-shadow: none!important
+
+
 div,
 span,
 h1,
@@ -2346,6 +2352,12 @@ footer
 
 
 @media (max-width: 993px)
+  header
+    .center-header
+      #cart
+        button
+          margin-bottom: 0!important
+
   .information-information-4
     .carousel-slider
       li .img-bg
@@ -2396,7 +2408,6 @@ footer
     .search-block,
     .phone-block,
     .wish-block,
-    #cart .second,
     #top
       display: none!important
 

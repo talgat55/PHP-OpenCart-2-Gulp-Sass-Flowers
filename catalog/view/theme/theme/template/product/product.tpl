@@ -10,7 +10,7 @@
             <?php $class = 'col-sm-12'; ?>
         <?php } ?>
         <div id="content" class="col-sm-12"><?php echo $content_top; ?>
-            <div class="row single">
+            <div id="product" class="row single">
                 <?php if ($column_left || $column_right) { ?>
                     <?php $class = 'col-sm-6'; ?>
                 <?php } else { ?>
@@ -92,7 +92,7 @@
                                     <?php } ?>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="button" data-toggle="tooltip" class="btn btn-default add-wishlist"
+                                    <button type="button" class="btn btn-default add-wishlist"
                                             title="<?php echo $button_wishlist; ?>"
                                             onclick="wishlist.add('<?php echo $product_id; ?>');">
                                         <i class="fa fa-heart"></i>
@@ -205,7 +205,7 @@
                         <li>
                             <div class="product-thumb">
                                 <div class="image position-relative">
-                                    <button class="add-wishlist" type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>"
+                                    <button class="add-wishlist" type="button" title="<?php echo $button_wishlist; ?>"
                                             onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
                                                 class="fa fa-heart"></i>
                                     </button>
@@ -296,16 +296,17 @@
     //--></script>
 <script type="text/javascript"><!--
     $('#button-cart').on('click', function () {
+
         $.ajax({
             url: 'index.php?route=checkout/cart/add',
             type: 'post',
             data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
             dataType: 'json',
             beforeSend: function () {
-                $('#button-cart').button('loading');
+                // $('#button-cart').button('loading');
             },
             complete: function () {
-                $('#button-cart').button('reset');
+                // $('#button-cart').button('reset');
             },
             success: function (json) {
                 $('.alert, .text-danger').remove();
@@ -333,11 +334,15 @@
                 }
 
                 if (json['success']) {
-                    $('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                    $('#content').parent().before('<div class="alert alert-success w-100"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-                    $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                    // Need to set timeout otherwise it wont update the total
+                    setTimeout(function () {
+                        $('#cart > button #cart-total').html(json['total'].price);
+                        $('#cart > button .second .price').html(json['total'].count + 'р');
+                    }, 100);
 
-                    $('html, body').animate({scrollTop: 0}, 'slow');
+                    $('html, body').animate({ scrollTop: 0 }, 'slow');
 
                     $('#cart > ul').load('index.php?route=common/cart/info ul li');
                 }
