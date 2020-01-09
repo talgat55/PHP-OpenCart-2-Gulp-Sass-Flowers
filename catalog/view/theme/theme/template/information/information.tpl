@@ -628,7 +628,7 @@
                         <?php } else { ?>
                             <?php $class = 'col-sm-12'; ?>
                         <?php } ?>
-                        <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+                        <div id="content"  style="margin-bottom: 40px;"><?php echo $content_top; ?>
 
                             <?php echo $description; ?><?php echo $content_bottom; ?></div>
                         <?php echo $column_right; ?>
