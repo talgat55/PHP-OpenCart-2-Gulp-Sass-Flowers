@@ -236,7 +236,8 @@ class ControllerCheckoutCart extends Controller
 
             $data['continue'] = $this->url->link('common/home');
 
-            $data['checkout'] = $this->url->link('checkout/checkout', '', true);
+//            $data['checkout'] = $this->url->link('checkout/checkout', '', true);
+            $data['checkout'] = '/simplecheckout';
 
             $this->load->model('extension/extension');
 
