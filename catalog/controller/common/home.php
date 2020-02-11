@@ -365,14 +365,33 @@ class ControllerCommonHome extends Controller
 
 
         } else {
-            $filter_data_filter = array(
-                'filter_category_id' => '17',
-                'filter_filter' => '',
-                'sort' => '',
-                'order' => '',
-                'start' => '0',
-                'limit' => '8'
-            );
+            $this->load->model('catalog/category');
+            $categories = $this->model_catalog_category->getCategories(0);
+            $newcat = [];
+            foreach ($categories as $cat){
+                array_push($newcat,$cat['category_id'] );
+            }
+            $redyCat = implode(',', $newcat);
+            if (isset($this->request->get['min_price_custom']) || isset($this->request->get['max_price_custom'])) {
+                $filter_data_filter = array(
+                    'filter_category_id' => $redyCat,
+                    'filter_filter' => '',
+                    'sort' => '',
+                    'order' => '',
+                    'start' => '0',
+                    'limit' => '100'
+                );
+            }else{
+                $filter_data_filter = array(
+                    'filter_category_id' => '17',
+                    'filter_filter' => '',
+                    'sort' => '',
+                    'order' => '',
+                    'start' => '0',
+                    'limit' => '8'
+                );
+            }
+
             $results_filter = $this->model_catalog_product->getProducts($filter_data_filter);
         }
 
