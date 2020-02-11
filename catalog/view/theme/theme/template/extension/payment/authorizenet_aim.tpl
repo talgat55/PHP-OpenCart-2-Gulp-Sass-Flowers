@@ -52,10 +52,10 @@ $('#button-confirm').on('click', function() {
 		dataType: 'json',
 		cache: false,
 		beforeSend: function() {
-			$('#button-confirm').button('loading');
+			// $('#button-confirm').button('loading');
 		},
 		complete: function() {
-			$('#button-confirm').button('reset');
+			// $('#button-confirm').button('reset');
 		},
 		success: function(json) {
 			if (json['error']) {

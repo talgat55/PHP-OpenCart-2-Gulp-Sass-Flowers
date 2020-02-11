@@ -16,7 +16,7 @@ $('#button-confirm').on('click', function() {
 		url: 'index.php?route=extension/payment/bank_transfer/confirm',
 		cache: false,
 		beforeSend: function() {
-			$('#button-confirm').button('loading');
+			// $('#button-confirm').button('loading');
 		},
 		complete: function() {
 			$('#button-confirm').button('reset');

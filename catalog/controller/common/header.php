@@ -104,29 +104,29 @@ class ControllerCommonHeader extends Controller {
 		$this->load->model('catalog/category');
 
 		$this->load->model('catalog/product');
-
+        $this->load->model('catalog/information');
 		$data['categories'] = array();
 
 		$categories = $this->model_catalog_category->getCategories(0);
 
         $data['informations'] = array();
+            foreach ($this->model_catalog_information->getInformations() as $result) {
+                if ($result['status']  && $result['top_bar']  ) {
 
-        foreach ($this->model_catalog_information->getInformations() as $result) {
-            if ($result['status']  && $result['top_bar']  ) {
-
-               if($result['title']== 'Отзывы') {
-                   $data['informations'][] = array(
-                       'title' => $result['title'],
-                       'href'  => '/shoprating'
-                   );
-               }else{
-                   $data['informations'][] = array(
-                       'title' => $result['title'],
-                       'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
-                   );
-               }
+                    if($result['title']== 'Отзывы') {
+                        $data['informations'][] = array(
+                            'title' => $result['title'],
+                            'href'  => '/shoprating'
+                        );
+                    }else{
+                        $data['informations'][] = array(
+                            'title' => $result['title'],
+                            'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+                        );
+                    }
+                }
             }
-        }
+
 
 		foreach ($categories as $category) {
 			if ($category['top']) {

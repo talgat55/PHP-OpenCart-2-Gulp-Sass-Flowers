@@ -133,13 +133,17 @@
                                     <?php } ?>
                                 <?php } ?>
                             </div>
+                            <?php   if (!empty($description)): ?>
                             <div class="item-desc w-100">
                                 <h4>Описание:</h4>
                                 <div class="content">
                                     <?php echo $description; ?>
                                 </div>
                             </div>
+                            <?php endif; ?>
+
                         </div>
+
 
                         <div class="col-lg-4 col-md-12 mt-2  ">
                             <div class="item-info">

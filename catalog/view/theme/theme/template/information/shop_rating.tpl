@@ -144,7 +144,7 @@
                             <?php foreach ($ratings as $rating) { ?>
                                 <div class="ratings-item col-lg-5 col-md-12">
                                     <div class="top-block d-flex align-items-center  ">
-                                        <img src="/catalog/view/theme/theme/images/review-img.png" alt="Изображение">
+                                        <img src="/catalog/view/theme/theme/images/new_review.jpg" alt="Изображение">
                                         <div class="text d-flex">
                                             <span><?php echo $rating['customer_name']; ?> </span>,
                                             <span> <?php echo date("d.m.Y", strtotime($rating['date_added'])); ?></span>

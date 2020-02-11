@@ -1648,7 +1648,8 @@ header {
   .information-shop_rating .ratings-item .top-block {
     margin-bottom: -45px; }
     .information-shop_rating .ratings-item .top-block img {
-      height: 118px; }
+      height: 118px;
+      border-radius: 50%; }
     .information-shop_rating .ratings-item .top-block .text {
       padding-left: 10px;
       font-size: 18px; }
