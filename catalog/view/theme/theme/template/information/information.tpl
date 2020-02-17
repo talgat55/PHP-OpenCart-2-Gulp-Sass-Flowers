@@ -211,8 +211,8 @@
                                                          alt="Иконка"/>
                                                 </div>
                                                 <div class="content">
-                                                    <a href="mailto:buy@mrbuket.ru" class="link">
-                                                        buy@mrbuket.ru
+                                                    <a href="mailto:buy@mr-buket.ru" class="link">
+                                                        buy@mr-buket.ru
                                                     </a>
                                                 </div>
                                             </div>
@@ -245,7 +245,9 @@
                                                          alt="Иконка"/>
                                                 </div>
                                                 <div class="content">
-                                                    Наши отзывы
+                                                    <a href="/shoprating/" class="link">
+                                                        Наши отзывы
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -370,7 +372,7 @@
                                 По всем спорным вопросам качества, комплектации, стоимости и времени доставки просим
                                 связаться с нами по телефону
                                 <a href="tel:+7 (904)370-40-45">+7 (904)370-40-45</a>
-                                Отзывы и предложения можно направить на адрес: <a href="mailto:buy@mrbuket.ru">buy@mrbuket.ru</a>
+                                Отзывы и предложения можно направить на адрес: <a href="mailto:buy@mr-buket.ru">buy@mr-buket.ru</a>
                             </p>
                             <div class="feature-row-alt row   justify-content-center">
                                 <ul class="features-list">
@@ -469,8 +471,8 @@
                                                              alt="Иконка"/>
                                                     </div>
                                                     <div class="content">
-                                                        <a href="mailto:buy@mrbuket.ru" class="link">
-                                                            buy@mrbuket.ru
+                                                        <a href="mailto:buy@mr-buket.ru" class="link">
+                                                            buy@mr-buket.ru
                                                         </a>
                                                     </div>
                                                 </div>

@@ -350,11 +350,11 @@ header
   .catalog-menu
     a:hover
       color: $main_color
-  &:hover
+
+  &.is-active
     .catalog-menu
       visibility: visible!important
       opacity: 1!important
-
 
 
 
@@ -393,7 +393,7 @@ header
     color: #fff
     text-transform: uppercase
     background-color: $main_color
-    padding: 9px 55px
+    padding: 13px 55px
     text-decoration: none
     display: table
     box-shadow: 4px 8px 5px 2px #333
@@ -433,7 +433,7 @@ header
     font-weight: 400
     color: #fff
     background-color: $main_color
-    padding: 6px 60px
+    padding: 13px 60px
     margin-top: 15px
     text-decoration: none
     box-shadow: 4px 8px 5px 2px #333
@@ -475,7 +475,7 @@ header
     font-weight: 400
     color: #fff
     background-color: $main_color
-    padding: 6px 60px
+    padding: 13px 60px
     margin-top: 15px
     text-decoration: none
     box-shadow: 0px 6px 5px 2px #dcdcdc
@@ -1837,6 +1837,14 @@ header
     .row-item
       padding: 0 25px
 
+.information-information-14 #content *
+  font-size: 16px!important
+  color: #000!important
+  font-family: $font_basic!important
+
+.information-information-14 #content ul
+    padding-left: 20px!important
+
 
 //
 // Modal
@@ -2138,8 +2146,8 @@ footer
           margin-bottom: 0!important
 
 #mobile-toggle
-  position: fixed
-  top: 40px
+  position: absolute
+  top: 86px
   display: none
   right: 20px
   transition: all .6s
@@ -2355,8 +2363,19 @@ footer
     margin-bottom: 30px
 
 
+@media (min-width: 994px)
+  .catalog-hover-menu
+    &:hover
+      .catalog-menu
+        visibility: visible!important
+        opacity: 1!important
+
 @media (max-width: 993px)
+
   header
+    .catalog-menu
+      top: 34px
+
     .center-header
       #cart
         button
@@ -2497,6 +2516,7 @@ footer
         span
           text-align: left!important
 
+
 @media (max-width: 768px)
   .product-layout
     .product-item
@@ -2526,6 +2546,16 @@ footer
     .description
       width: 100%
       text-align: left
+  [class^="product-product"] #content .description #button-cart
+    width: 100%
+  header
+    .center-header
+      #cart
+        h3
+          display: none
+
+        .second
+          padding-left: 10px
 
 
 @media (max-width: 600px)
@@ -2543,3 +2573,12 @@ footer
     background-position: -169px!important
     .content
       padding: 0 20px
+
+  footer
+    .list-links
+      margin: 15px 0 0 0
+
+      a
+        line-height: 36px
+
+

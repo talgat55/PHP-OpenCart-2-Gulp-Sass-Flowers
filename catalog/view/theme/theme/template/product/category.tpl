@@ -185,8 +185,8 @@
                             <img class="hover" src="/catalog/view/theme/theme/images/main/mail-red.jpg" alt="Иконка"/>
                         </div>
                         <div class="content">
-                            <a href="mailto:buy@mrbuket.ru" class="link">
-                                buy@mrbuket.ru
+                            <a href="mailto:buy@mr-buket.ru" class="link">
+                                buy@mr-buket.ru
                             </a>
                         </div>
                     </div>
@@ -212,7 +212,9 @@
                                  alt="Иконка"/>
                         </div>
                         <div class="content">
-                            Наши отзывы
+                            <a href="/shoprating/" class="link">
+                                Наши отзывы
+                            </a>
                         </div>
                     </div>
                 </div>

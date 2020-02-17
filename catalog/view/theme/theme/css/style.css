@@ -320,7 +320,7 @@ header {
 .catalog-hover-menu .catalog-menu a:hover {
   color: #ef4334; }
 
-.catalog-hover-menu:hover .catalog-menu {
+.catalog-hover-menu.is-active .catalog-menu {
   visibility: visible !important;
   opacity: 1 !important; }
 
@@ -352,7 +352,7 @@ header {
     color: #fff;
     text-transform: uppercase;
     background-color: #ef4334;
-    padding: 9px 55px;
+    padding: 13px 55px;
     text-decoration: none;
     display: table;
     -webkit-box-shadow: 4px 8px 5px 2px #333;
@@ -389,7 +389,7 @@ header {
     font-weight: 400;
     color: #fff;
     background-color: #ef4334;
-    padding: 6px 60px;
+    padding: 13px 60px;
     margin-top: 15px;
     text-decoration: none;
     -webkit-box-shadow: 4px 8px 5px 2px #333;
@@ -428,7 +428,7 @@ header {
     font-weight: 400;
     color: #fff;
     background-color: #ef4334;
-    padding: 6px 60px;
+    padding: 13px 60px;
     margin-top: 15px;
     text-decoration: none;
     -webkit-box-shadow: 0px 6px 5px 2px #dcdcdc;
@@ -1758,6 +1758,14 @@ header {
   .information-shop_rating .form-row .row-item {
     padding: 0 25px; }
 
+.information-information-14 #content * {
+  font-size: 16px !important;
+  color: #000 !important;
+  font-family: "Roboto", sans-serif !important; }
+
+.information-information-14 #content ul {
+  padding-left: 20px !important; }
+
 #custom-modal {
   position: fixed;
   z-index: 99;
@@ -2021,8 +2029,8 @@ footer {
       margin-bottom: 0 !important; }
 
 #mobile-toggle {
-  position: fixed;
-  top: 40px;
+  position: absolute;
+  top: 86px;
   display: none;
   right: 20px;
   -webkit-transition: all .6s;
@@ -2239,7 +2247,14 @@ footer {
   .mb-sm-30 {
     margin-bottom: 30px; } }
 
+@media (min-width: 994px) {
+  .catalog-hover-menu:hover .catalog-menu {
+    visibility: visible !important;
+    opacity: 1 !important; } }
+
 @media (max-width: 993px) {
+  header .catalog-menu {
+    top: 34px; }
   header .center-header #cart button {
     margin-bottom: 0 !important; }
   .information-information-4 .carousel-slider li .img-bg {
@@ -2343,7 +2358,13 @@ footer {
         margin-bottom: 10px !important; }
   .information-information-7 .description {
     width: 100%;
-    text-align: left; } }
+    text-align: left; }
+  [class^="product-product"] #content .description #button-cart {
+    width: 100%; }
+  header .center-header #cart h3 {
+    display: none; }
+  header .center-header #cart .second {
+    padding-left: 10px; } }
 
 @media (max-width: 600px) {
   header .center-header #cart {
@@ -2354,4 +2375,8 @@ footer {
   .home-banner {
     background-position: -169px !important; }
     .home-banner .content {
-      padding: 0 20px; } }
+      padding: 0 20px; }
+  footer .list-links {
+    margin: 15px 0 0 0; }
+    footer .list-links a {
+      line-height: 36px; } }

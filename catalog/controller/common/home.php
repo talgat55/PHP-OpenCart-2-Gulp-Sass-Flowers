@@ -15,7 +15,8 @@ class ControllerCommonHome extends Controller
         $this->document->addScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU');
 
         $this->document->addScript('/catalog/view/theme/theme/js/jquery-ui.min.js');
-        $this->document->addScript('https://rawgit.com/simeydotme/jQuery-ui-Slider-Pips/master/src/js/jquery-ui-slider-pips.js');
+//        $this->document->addScript('https://rawgit.com/simeydotme/jQuery-ui-Slider-Pips/master/src/js/jquery-ui-slider-pips.js');
+        $this->document->addScript('/catalog/view/theme/theme/js/jquery-ui-slider-pips.js');
         $this->document->addScript('/catalog/view/theme/theme/js/jquery.ui.touch-punch.min.js');
 //
         $this->document->addStyle('/catalog/view/theme/theme/css/jqueryui.min.css');

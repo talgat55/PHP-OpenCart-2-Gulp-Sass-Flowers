@@ -234,6 +234,9 @@
                     }, 2000)
                 },
             });
+
+            ym(57523168, 'reachGoal', 'callback');
+            gtag('event', 'callback',{ 'event_category': 'form'});
         });
 
         function alertForm(alert) {

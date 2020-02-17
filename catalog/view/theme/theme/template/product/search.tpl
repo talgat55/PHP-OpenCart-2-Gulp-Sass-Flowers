@@ -131,7 +131,7 @@
 
                             */ ?>
                             <div class="row">
-                                <ul class="product-layout product-list row">
+                                <ul class="product-layout product-list row  " style="min-width: 100%;">
                                     <?php foreach ($products as $product) { ?>
                                         <li class=" product-item  col-lg-3 col-md-6  col-xs-12">
                                             <div class="product-thumb">

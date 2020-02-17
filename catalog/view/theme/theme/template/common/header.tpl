@@ -55,6 +55,54 @@
     <?php foreach ($analytics as $analytic) { ?>
         <?php echo $analytic; ?>
     <?php } ?>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(57523168, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            ecommerce: "dataLayer"
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/57523168" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158511282-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-158511282-1');
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "г. Кемерово",
+                "streetAddress": "ул. Ноградская, 22"
+            },
+            "description": "Интернет-магазин цветов mr-buket.ru. В нашем онлайн-каталоге вы найдете и откроете для себя великолепные букеты и эффектные цветочные композиции на любой вкус и по любому поводу.",
+            "name": "Интернет-магазин цветов Mr. Букет",
+            "telephone": "+7 (904)370-40-45"
+        }
+    </script>
 </head>
 <body class="<?php echo $class; ?>">
 <div class="body-wrapper">
@@ -67,9 +115,11 @@
         <div class="text-center">
             <div class="logo-mobile">
                 <?php if ($home == $og_url) { ?>
-                    <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>"
-                         alt="<?php echo $name; ?>"
-                         class="img-responsive"/>
+                    <a href="<?php echo $home; ?>">
+                        <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>"
+                             alt="<?php echo $name; ?>"
+                             class="img-responsive"/>
+                    </a>
                 <?php } else { ?>
                     <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>"
                                                         title="<?php echo $name; ?>"
@@ -156,9 +206,10 @@
                         <div id="logo">
                             <?php if ($logo) { ?>
                                 <?php if ($home == $og_url) { ?>
-                                    <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>"
-                                         alt="<?php echo $name; ?>"
-                                         class="img-responsive"/>
+                                    <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>"
+                                                                        title="<?php echo $name; ?>"
+                                                                        alt="<?php echo $name; ?>"
+                                                                        class="img-responsive"/></a>
                                 <?php } else { ?>
                                     <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>"
                                                                         title="<?php echo $name; ?>"
@@ -225,15 +276,15 @@
 
                             <ul class="catalog-menu">
                                 <?php foreach ($categories as $sub_cat): ?>
-                                <?php   if($sub_cat['name'] == 'Сборные букеты') : ?>
-                                    <?php  foreach ( $sub_cat['children'] as $sub_item) : ?>
+                                    <?php if ($sub_cat['name'] == 'Сборные букеты') : ?>
+                                        <?php foreach ($sub_cat['children'] as $sub_item) : ?>
                                             <li class="item">
                                                 <a href="<?php echo $sub_item['href']; ?>">
                                                     <?php echo $sub_item['name']; ?>
                                                 </a>
                                             </li>
-                                    <?php  endforeach; ?>
-                                <?php  endif; ?>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>
                         </div>

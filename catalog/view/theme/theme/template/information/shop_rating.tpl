@@ -106,7 +106,7 @@
                     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
 
                         <section class="description-section">
-                            <span style="text-align: center;"> С другой стороны начало повседневной работы по формированию позиции требуют определения и уточнения систем массового участия. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения модели развития.
+                            <span style="text-align: center;">
 
                             </span>
                         </section>

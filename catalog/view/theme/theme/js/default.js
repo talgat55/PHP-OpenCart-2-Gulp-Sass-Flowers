@@ -22,6 +22,13 @@ jQuery(document).ready(function () {
         jQuery('#sobInput33-2, #customer_telephone').mask('+0(000) 000-0000');
     }
 
+
+    jQuery('.add-to-cart').click(function (e) {
+        ym(57523168, 'reachGoal', 'addBasket');
+        gtag('event', 'addBasket',{ 'event_category': 'button'});
+    });
+
+
     // end redy function
 });
 
@@ -143,26 +150,39 @@ function activeElementByClick() {
     jQuery('.filter-block .radio-input input').change(function () {
         if (this.checked) {
             jQuery(this).parent().parent().addClass('active');
+            var nameItem = jQuery(this).attr('data-active');
+
+            jQuery(this).parent().find('span').html(' ').html(nameItem);
+
         } else {
+            var nameItemMain = jQuery(this).attr('data-main');
+            jQuery(this).parent().find('span').html(' ').html(nameItemMain);
             jQuery(this).parent().parent().removeClass('active');
         }
-        checkActiveInputsCats();
+        checkActiveInputsCats( );
     });
 }
 
 /**
  *  Check active inputs in block filter on home page
  */
-function checkActiveInputsCats() {
+function checkActiveInputsCats( ) {
     "use strict";
-    var tempCat;
+    var tempCat = '';
     jQuery(".filter-block .first input").each(function (index) {
         if (jQuery(this).prop("checked") === true) {
             tempCat = tempCat + ',' + jQuery(this).val();
         }
-
     });
-    var newerQuery = jQuery.query.SET('categories_custom', tempCat);
+
+
+    if(tempCat.length){
+        var newerQuery = jQuery.query.SET('categories_custom', tempCat);
+
+    }else{
+        var newerQuery = jQuery.query.REMOVE('categories_custom');
+    }
+
     var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + newerQuery;
     window.history.pushState({path: newurl}, '', newurl);
     ajaxProduct('home');
@@ -184,6 +204,7 @@ function priceSlider() {
             range: true,
             min: 0,
             max: 0,
+            values: [minValue, maxValue],
             step: 1,
             change: function (event, ui) {
                 console.log(ui.values[0]);
@@ -255,7 +276,10 @@ function mapInit() {
                     // её "ножки" (точки привязки).
                     iconImageOffset: [-14, -38]
                 });
+            myPlacemark.events.add('click', function () {
 
+                    window.open("https://2gis.ru/kemerovo/geo/704323096959500", "_blank" );
+            });
 
             myMap.geoObjects
 
@@ -476,11 +500,17 @@ function toggleFilterMenu() {
     "use strict";
 
     var clickClass = '.heading-filter-block-mobile';
+    var clickClassSecond = '.catalog-hover-menu';
     var bodyClass = 'body';
 
     jQuery(bodyClass).on('click', clickClass, function () {
         jQuery(clickClass).toggleClass('is-active');
         jQuery('.filter-block, .product-page.page-cat .filter-page-wrapper').toggleClass('is-active');
+        return false;
+    });
+
+    jQuery(bodyClass).on('click', clickClassSecond, function () {
+        jQuery(clickClassSecond).toggleClass('is-active');
         return false;
     });
 

@@ -156,8 +156,10 @@ class ControllerExtensionModuleSobfeedback extends Controller{
 				}
 				
 			  	//$mail->setFrom($this->config->get('config_email'));
+
 			  	$mail->setFrom($this->config->get('config_email'));
-			  	$mail->setSender($this->config->get('config_name'));
+//			  	$mail->setSender($this->config->get('config_name'));
+                $mail->setSender(html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8')); //это почта от кого придет письмо
 			  	$mail->setSubject(html_entity_decode(sprintf($this->language->get('entry_email'), 'NAMEString', ENT_QUOTES, 'UTF-8')));
 
 			  	//перебор форм
