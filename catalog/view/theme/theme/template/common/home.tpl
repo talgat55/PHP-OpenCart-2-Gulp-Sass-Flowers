@@ -593,24 +593,12 @@
                                                  alt="Иконка"/>
                                         </div>
                                         <div class="content">
-                                            Мы в Инстаграм
+                                            <a  target="_blank" href="https://www.instagram.com/mr.buket42/" class="link">
+                                                Мы в Инстаграм
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-xs-12">
-                                    <div class="info-block d-flex  align-items-center">
-                                        <div class="image-block">
-                                            <img class="main" src="/catalog/view/theme/theme/images/main/vk.png"
-                                                 alt="Иконка"/>
-                                            <img class="hover" src="/catalog/view/theme/theme/images/main/vk-red.jpg"
-                                                 alt="Иконка"/>
-                                        </div>
-                                        <div class="content">
-                                            Мы Вконтакте
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                         <div class="col-md-6 col-xs-12">

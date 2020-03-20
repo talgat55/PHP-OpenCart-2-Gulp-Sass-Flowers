@@ -509,7 +509,7 @@ function toggleFilterMenu() {
         return false;
     });
 
-    jQuery(bodyClass).on('click', clickClassSecond, function () {
+    jQuery(bodyClass).on('click', clickClassSecond + ' .show-cat-link', function () {
         jQuery(clickClassSecond).toggleClass('is-active');
         return false;
     });

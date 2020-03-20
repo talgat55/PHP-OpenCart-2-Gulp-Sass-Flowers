@@ -263,24 +263,13 @@
                                                          alt="Иконка"/>
                                                 </div>
                                                 <div class="content">
-                                                    Мы в Инстаграм
+                                                    <a  target="_blank" href="https://www.instagram.com/mr.buket42/" class="link">
+                                                        Мы в Инстаграм
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="vk-row  col-lg-6 col-xs-12">
-                                            <div class="info-block d-flex  align-items-center">
-                                                <div class="image-block">
-                                                    <img class="main" src="/catalog/view/theme/theme/images/main/vk.png"
-                                                         alt="Иконка"/>
-                                                    <img class="hover"
-                                                         src="/catalog/view/theme/theme/images/main/vk-red.jpg"
-                                                         alt="Иконка"/>
-                                                </div>
-                                                <div class="content">
-                                                    Мы Вконтакте
-                                                </div>
-                                            </div>
-                                        </div>
+
 
                                     </div>
                                 </div>
@@ -495,29 +484,15 @@
                                                             </div>
                                                             <div class="content">
                                                                 <a href="#" class="link">
-                                                                    Мы в Инстаграм
+                                                                    <a  target="_blank" href="https://www.instagram.com/mr.buket42/" class="link">
+                                                                        Мы в Инстаграм
+                                                                    </a>
                                                                 </a>
                                                             </div>
                                                         </div>
                                                     </div>
 
-                                                    <div class="vk-row col-lg-6 col-xs-12">
-                                                        <div class="info-block d-flex  align-items-center">
-                                                            <div class="image-block">
-                                                                <img class="main"
-                                                                     src="/catalog/view/theme/theme/images/main/vk.png"
-                                                                     alt="Иконка"/>
-                                                                <img class="hover"
-                                                                     src="/catalog/view/theme/theme/images/main/vk-red.jpg"
-                                                                     alt="Иконка"/>
-                                                            </div>
-                                                            <div class="content">
-                                                                <a href="#" class="link">
-                                                                    Мы Вконтакте
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
 
                                                 </div>
                                             </div>

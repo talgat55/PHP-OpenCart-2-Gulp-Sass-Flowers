@@ -12,12 +12,13 @@
         <div id="content" class="col-md-12 col-xs-12 "><?php echo $content_top; ?>
             <h1 class="main-title"><?php echo $heading_title; ?></h1>
 
-            <div class="heading-filter-block-mobile align-items-center  justify-content-center">
-                <i class="fas fa-filter"></i>
-                <h3>Фильтр</h3>
-            </div>
+
 
             <?php if ($categories): ?>
+                <div class="heading-filter-block-mobile align-items-center  justify-content-center">
+                    <i class="fas fa-filter"></i>
+                    <h3>Фильтр</h3>
+                </div>
                 <div class="filter-page-wrapper">
                     <div class="d-flex w-100 align-items-center  categories-block">
                         <div class="text">
@@ -226,22 +227,12 @@
                             <img class="hover" src="/catalog/view/theme/theme/images/main/inst-red.jpg" alt="Иконка"/>
                         </div>
                         <div class="content">
-                            Мы в Инстаграм
+                            <a  target="_blank" href="https://www.instagram.com/mr.buket42/" class="link">
+                                Мы в Инстаграм
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-xs-12">
-                    <div class="info-block d-flex  align-items-center">
-                        <div class="image-block">
-                            <img class="main" src="/catalog/view/theme/theme/images/main/vk.png" alt="Иконка"/>
-                            <img class="hover" src="/catalog/view/theme/theme/images/main/vk-red.jpg" alt="Иконка"/>
-                        </div>
-                        <div class="content">
-                            Мы Вконтакте
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
         <div class="col-md-6 col-xs-12">
