@@ -2341,6 +2341,10 @@ footer {
     text-align: left !important; } }
 
 @media (max-width: 768px) {
+  .product-search .page-wrap h2 {
+    padding-top: 20px; }
+  .product-search #content {
+    padding-bottom: 20px; }
   .product-layout .product-item .image a {
     display: table;
     margin: 0 auto; }
